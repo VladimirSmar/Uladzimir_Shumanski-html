@@ -24,6 +24,7 @@
 }
 
 #mc4wp_Action_label{
+    margin-left: 10px;
     font-family: 'Delius', cursive;
     font-size: 10pt;
     font-weight: bold;
@@ -31,9 +32,13 @@
     color: black;
 }
 
-.emptyrow{
+.empty-row{
     margin-top: 15px;
     margin-bottom: 20px;
+}
+
+.smaller-empty-row{
+    height: 12px;
 }
 
 h4{
