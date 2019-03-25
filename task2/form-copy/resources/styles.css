@@ -82,9 +82,9 @@ select::-ms-expand{
 }
 
 select#arrows {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3klEQVRIS+3VMU9CMRTF8d8zBL+aizoQFhx0kUk33RzdYMNFXUFnYeGrYYyaJiUxJHDLSxodbNKpfeffc9/pbaPyaCrr+3OA++z4rtT5Pg5GuMnCY9yWQEoBE1xhlUUP8YDrCBIB0vojLvGO0yz4hm4JJAKcYYoPHGOZAUdYoIMBXrc5iQAHeMlzviFygj7O8dkWEJU4XI8chALRhn9AVKHf70VRTHu4wFfbmKZLNKt50dLBnna0imcMd/2I0phWa3Y/D1e1Xa9BCZJG0VuQNpaWKMx72xS1Fl5/WN3BN+AgJhnZQlq4AAAAAElFTkSuQmCC');
-    background-position: calc(100%), 100% 0;
-    background-size: 1.5em 1.5em;
+    background-image: url(arrows.jpg);
+    background-position: 98%, 100%;
+    background-size: 0.8em 0.9em;
     background-repeat: no-repeat;
 }
 
@@ -254,6 +254,11 @@ select#arrows:focus {
     overflow: visible;
     vertical-align: middle;
 }
+
+.close-icon:hover {
+    opacity: 1;
+}
+
 .close-icon:after {
     content: "\2716";
     display: block;
