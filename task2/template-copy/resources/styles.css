@@ -125,9 +125,7 @@ body{
 .center-text-background{
     position: absolute;
     top: 35%;
-    left: 35%;
-    width: 330px;
-    height: 64px;
+    left: 32%;
     z-index: 5;
     background-color: white;
     opacity: 0.95;
