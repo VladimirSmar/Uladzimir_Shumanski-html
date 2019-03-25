@@ -17,11 +17,6 @@
     box-shadow: 10px 0 0 0 rgba(0, 0, 0, 0.05);
 }
 
-.emptyrow{
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
 #Form_Action_label{
     font-size: 16px;
     font-weight: bold;
@@ -34,6 +29,11 @@
     font-weight: bold;
     background-color: rgb(239, 238, 238);
     color: black;
+}
+
+.emptyrow{
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 h4{
@@ -68,6 +68,12 @@ select{
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand{
+    display: none;
 }
 
 select#arrows {
@@ -89,7 +95,7 @@ select#arrows:focus {
     height: 20px;
 }
    
-.close {
+/*.close {
     display: inline-block;
     position: relative;
     opacity: 0.3;
@@ -116,27 +122,7 @@ select#arrows:focus {
 
 .close:after {
     transform: rotate(-45deg);
-}
-
-.styled-button{
-    border: 0;
-    line-height: 1.75;
-    padding: 3px 8px 3px 8px;
-    text-align: center;
-    color: #fff;
-    border-radius: 5px;
-    background-color: rgb(0, 134, 190);
-
-}
-
-.styled-button:hover {
-    background-color: rgb(0, 150, 200);
-}
-
-.styled-button:active {
-    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-                inset 2px 2px 3px rgba(0, 0, 0, .6);
-}
+}*/
 
 .container {
     position: relative;
@@ -231,4 +217,47 @@ select#arrows:focus {
     -webkit-transform: rotate(40deg);
     -ms-transform: rotate(40deg);
     transform: rotate(40deg);
+}
+
+.styled-button{
+    border: 0;
+    line-height: 1.75;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background-color: rgb(0, 134, 190);
+
+}
+
+.styled-button:hover {
+    background-color: rgb(0, 150, 200);
+}
+
+.styled-button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.close-icon {
+    position: relative;
+    padding: 0;
+    border:1px solid transparent;
+    background-color: transparent;
+    opacity: 0.6;
+    display: inline-block;
+    overflow: visible;
+    vertical-align: middle;
+}
+.close-icon:after {
+    content: "\2716";
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    bottom: 3px;
+    text-align: center;
+    color: gray;
+    cursor: pointer;
 }
