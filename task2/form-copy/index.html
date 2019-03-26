@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Form Task two</title>
-        <link rel="stylesheet" href="resources/styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Delius|Open+Sans" rel="stylesheet">
-    </head>
-    <body>
-        <form action="#" id="main-form">
-            <span id="Form_Action_label">Form Action</span>
-            <span id="mc4wp_Action_label">_mc4wp_action</span>
-            <div class="empty-row">
-                This field will allow your visitors to choose whether they would like to subscribe or unsubscribe
-            </div>
-            <label><h4>Field Label</h4></label>
-            <input id="Form-Action-Input" type="text" placeholder="Form Action">
-            <div class="empty-row"></div>
-            <label><h4>Choice Type</h4></label>
-            <select id="arrows">
-                <option>Radio Buttons</option>
-                <option>No external back</option>
-                <option>No wrapper</option>
-                <option>Annoying</option>
-            </select>
-            <div class="empty-row"></div>
-            <label><h4>Choices</h4></label>
-            <div id="inside-div">
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Task two</title>
+    <link rel="stylesheet" href="resources/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius|Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <form action="#" class="main-form">
+        <span class="form-Action-label">Form Action</span>
+        <span class="mc4wp-Action-label">_mc4wp_action</span>
+        <div class="empty-row">
+            This field will allow your visitors to choose whether they would like to subscribe or unsubscribe
+        </div>
+        <label><span class="label-text">Field Label</span></label>
+        <input type="text" class="bigger-input-text" value="Form Action">
+        <div class="empty-row"></div>
+        <label><span class="label-text">Choice Type</span></label>
+        <select class="select-with-arrows">
+            <option>Radio Buttons</option>
+            <option>No external</option>
+            <option>No wrapper</option>
+            <option>Annoying</option>
+        </select>
+        <div class="empty-row"></div>
+        <label><span class="label-text">Choices</span></label>
+            <div class="inside-div">
                 <label class="container">
-                    <input type="radio" id="testingsubject" name="radio-button-group">
-                    <span class="radio-check"></span>
+                    <input type="radio" class="container-hidden-radio" name="radio-button-group">
+                    <span class="custom-radio-check"></span>
                 </label>
-                <input class="choices-text" type="text" placeholder="Subscribe">
+                <input class="choices-text" type="text" value="Subscribe">
                 <button class="close-icon" type="reset"></button>
-                <!--<span class="close" onclick="this.previousElementSibling.value=''"></span>-->
                 <label class="container">
-                    <input type="radio" name="radio-button-group">
-                    <span class="radio-check"></span>
+                    <input type="radio" class="container-hidden-radio" name="radio-button-group">
+                    <span class="custom-radio-check"></span>
                 </label>
-                <input class="choices-text" type="text" placeholder="Unsubscribe">
+                <input class="choices-text" type="text" value="Unsubscribe">
                 <button class="close-icon" type="reset"></button>
-                <!--<span class="close" onclick="this.previousElementSibling.value=''"></span>-->
             </div>
-            <div class="smaller-empty-row"></div>
-            <label class="container">
-                <input type="checkbox" id="linked-check">
-                <span class="checkbox-check"></span>
-            </label>
-            <label for="linked-check">Wrap in paragraph tags?</label>
-            <div class="empty-row"></div>
-            <input class="styled-button" type="button" value="Add to form" onClick="window.open('https://google.com')">
-        </form>
-    </body>
+        <div class="smaller-empty-row"></div>
+        <label class="container">
+            <input type="checkbox" id="container-hidden-check">
+            <span class="custom-checkbox-check"></span>
+        </label>
+        <label for="container-hidden-check">Wrap in paragraph tags?</label>
+        <div class="empty-row"></div>
+        <input class="styled-button" type="button" value="Add to form" onClick="window.open('https://google.com')">
+    </form>
+</body>
+
 </html>

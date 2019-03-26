@@ -6,17 +6,7 @@ body{
     height: 100%;
 }
 
-.facebook, 
-.dots, 
-.ball, 
-.google-plus, 
-.linkedin, 
-.pinterest, 
-.wifi, 
-.skype, 
-.twitter, 
-.vine, 
-.youtube{
+.sprite-icons{
     position: absolute;
     width: 25px;
     height: 25px;
@@ -71,9 +61,30 @@ body{
 }
 
 .sprites-keeper{
+    position: relative;
     width: 100%;
     height: 270px;
     background-color: rgb(242, 242, 242);
+}
+
+.center-text-background{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background-color: white;
+    opacity: 0.95;
+}
+
+.center-text{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+    border: 2px solid black;
+    margin: 3px;
+    padding: 10px 20px 10px 20px;
+    position: relative;
+    opacity: 0.95;
 }
 
 .left-sprite{
@@ -88,7 +99,7 @@ body{
 
 .container-left{
     position: absolute;
-    left: 30px;
+    left: 65px;
     width: 100%;
     transform: rotate(-5deg) scale(1.2);
 }
@@ -122,25 +133,6 @@ body{
     margin: 10px;
 }
 
-.center-text-background{
-    position: absolute;
-    top: 35%;
-    left: 32%;
-    z-index: 5;
-    background-color: white;
-    opacity: 0.95;
-}
-
-.center-text{
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 30px;
-    border: 2px solid black;
-    margin: 3px;
-    padding: 10px 20px 10px 20px;
-    position: relative;
-    opacity: 0.95;
-}
-
 .right-sprite{
     display: inline-block;
     position: relative;
@@ -162,8 +154,7 @@ body{
     margin: 10px;
 }
 
-.buttons-white,
-.buttons-black{
+.buttons-container{
     position: relative;
     width: calc(100%-10px);
     margin: 5px;
@@ -174,67 +165,57 @@ body{
     box-sizing:border-box;
 }
 
-.buttons-white{
+.buttons-white-background{
     background-color: rgb(255, 255, 255);
 }
 
-.buttons-black{
+.buttons-black-background{
     background-color: rgb(51, 51, 51);
 }
 
-.button-pink,
-.button-green,
-.button-blue,
-.button-red,
-.button-orange,
-.button-yellow{
+.buttons-positioner{
+    margin: 5px;
+}
+
+.custom-button{
     display: inline-block;
+    margin: 5px 0px;
     padding: 5px 10px;
     border-radius: 3px;
     color: white;
+    font-size: 10px;
 }
 
 .button-pink{
-    margin: 5px 0px 5px 5px;
     background-color: rgb(233, 79, 170);
     font-size: 20px;
 }
 
 .button-green{
-    margin: 5px 0px 5px 0px;
     background-color: rgb(169, 204, 60);
-    font-size: 10px;
 }
 
 .button-blue{
-    margin: 5px 0px 5px 5px;
     background-color: rgb(78, 164, 237);
-    font-size: 10px;
-}
-
-.button-blue-black{
-    padding: 3px 6px 3px 6px;
 }
 
 .button-red{
-    margin: 5px 0px 5px 0px;
     background-color: rgb(236, 89, 85);
-    font-size: 10px;
 }
 
 .button-orange{
-    margin: 5px 0px 5px 5px;
     background-color: rgb(255, 126, 41);
-    font-size: 10px;
-}
-
-.button-orange-black{
-    padding: 3px 6px 3px 6px;
-    font-size: 8px;
 }
 
 .button-yellow{
-    margin: 5px 0px 5px 0px;
     background-color: rgb(249, 191, 46);
-    font-size: 10px;
+}
+
+.button-special{
+    padding: 3px 6px 3px 6px;
+}
+
+.button-special-orange{
+    padding: 3px 6px 3px 6px;
+    font-size: 8px;
 }

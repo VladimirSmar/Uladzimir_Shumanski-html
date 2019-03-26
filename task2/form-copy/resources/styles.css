@@ -1,4 +1,4 @@
-#main-form{
+.main-form{
     margin: 20px;
     width: 400px;
     height: 460px;
@@ -8,7 +8,7 @@
     letter-spacing: -0.02em;
 }
 
-#inside-div{
+.inside-div{
     margin: 0;
     padding: 4px;
     width: 360px;
@@ -17,13 +17,13 @@
     box-shadow: 10px 0 0 0 rgba(0, 0, 0, 0.05);
 }
 
-#Form_Action_label{
+.form-Action-label{
     font-size: 16px;
     font-weight: bold;
     letter-spacing: normal;
 }
 
-#mc4wp_Action_label{
+.mc4wp-Action-label{
     margin-left: 10px;
     font-family: 'Delius', cursive;
     font-size: 10pt;
@@ -41,54 +41,48 @@
     height: 12px;
 }
 
-h4{
+.bigger-input-text{
+    width: 400px;
+}
+
+.label-text{
+    display: block;
+    font-weight: bold;
     margin: 0;
     margin-bottom: 4px;
     padding: 0;
 }
 
-#Form-Action-Input{
-    width: 400px;
-    height: 17px;
-    padding: 2px;
-}
-
-#Radio-Buttons-Input{
-    width: 110px;
-    height: 20px;
-}
-
-select{
+.select-with-arrows{
     background-color: white;
     border: thin solid grey;
     border-radius: 4px;
     display: inline-block;
     font: inherit;
-    line-height: 0.9em;
-    padding: 0.5em 0.5em 0.5em 0.5em;
+    width: 120px;
+    line-height: 1.2em;
+    padding: 0.4em;
     margin: 0; 
-    overflow: hidden;     
+    overflow: hidden;    
+    background-image: url(arrows.jpg);
+    background-position: 98%, 100%;
+    background-size: 0.8em 0.9em;
+    background-repeat: no-repeat; 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
+    -o-appearance: none;
     appearance: none;
 }
 
-select::-ms-expand{
+.select-with-arrows::-ms-expand{
     display: none;
 }
 
-select#arrows {
-    background-image: url(arrows.jpg);
-    background-position: 98%, 100%;
-    background-size: 0.8em 0.9em;
-    background-repeat: no-repeat;
-}
-
-select#arrows:focus {
+.select-with-arrows:focus{
     border-color: blue;
     outline: 0;
 }
@@ -99,37 +93,8 @@ select#arrows:focus {
     width: 310px;
     height: 20px;
 }
-   
-/*.close {
-    display: inline-block;
-    position: relative;
-    opacity: 0.3;
-    }
 
-.close:hover {
-    opacity: 1;
-}
-
-.close:before, 
-.close:after {
-    position: absolute;
-    content: ' ';
-    left: 7px;
-    bottom: 1px;
-    height: 10px;
-    width: 2px;
-    background-color: #333;
-}
-
-.close:before {
-    transform: rotate(45deg);
-}
-
-.close:after {
-    transform: rotate(-45deg);
-}*/
-
-.container {
+.container{
     position: relative;
     padding-left: 25px;
     -webkit-user-select: none;
@@ -138,7 +103,8 @@ select#arrows:focus {
     user-select: none;
 }
 
-.container input {
+.container .container-hidden-radio,
+.container #container-hidden-check{
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -146,7 +112,7 @@ select#arrows:focus {
     width: 0;
 }  
 
-.radio-check {
+.custom-radio-check{
     position: absolute;
     top: 0;
     left: 5px;
@@ -157,25 +123,25 @@ select#arrows:focus {
     border-radius: 50%;
 }
 
-.container:hover input ~ .radio-check {
+.container:hover .container-hidden-radio ~ .custom-radio-check{
     background-color: #ccc;
 }
 
-.container input:checked ~ .radio-check {
+.container .container-hidden-radio:checked ~ .custom-radio-check{
     background-color: white;
 }
 
-.radio-check:after {
+.custom-radio-check:after{
     content: "";
     position: absolute;
     display: none;
 }
 
-.container input:checked ~ .radio-check:after {
+.container .container-hidden-radio:checked ~ .custom-radio-check:after{
     display: block;
 }
 
-.container .radio-check:after {
+.container .custom-radio-check:after{
     top: 4px;
     left: 4px;
     width: 5px;
@@ -184,7 +150,7 @@ select#arrows:focus {
     background: #2196F3;
 }
 
-.checkbox-check {
+.custom-checkbox-check{
     position: absolute;
     top: 0;
     left: 0;
@@ -194,25 +160,25 @@ select#arrows:focus {
     border: 1px solid gray;
   }
   
-.container:hover input ~ .checkbox-check {
+.container:hover #container-hidden-check ~ .custom-checkbox-check{
     background-color: #ccc;
 }
 
-.container input:checked ~ .checkbox-check {
+.container #container-hidden-check:checked ~ .custom-checkbox-check{
     background-color: white;
 }
 
-.checkbox-check:after {
+.custom-checkbox-check:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-.container input:checked ~ .checkbox-check:after {
+.container #container-hidden-check:checked ~ .custom-checkbox-check:after{
     display: block;
 }
 
-.container .checkbox-check:after {
+.container .custom-checkbox-check:after{
     left: 4px;
     top: 1px;
     width: 3px;
@@ -235,16 +201,16 @@ select#arrows:focus {
 
 }
 
-.styled-button:hover {
+.styled-button:hover{
     background-color: rgb(0, 150, 200);
 }
 
-.styled-button:active {
+.styled-button:active{
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
-.close-icon {
+.close-icon{
     position: relative;
     padding: 0;
     border:1px solid transparent;
@@ -255,11 +221,11 @@ select#arrows:focus {
     vertical-align: middle;
 }
 
-.close-icon:hover {
+.close-icon:hover{
     opacity: 1;
 }
 
-.close-icon:after {
+.close-icon:after{
     content: "\2716";
     display: block;
     width: 4px;
