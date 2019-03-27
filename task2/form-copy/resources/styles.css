@@ -1,0 +1,254 @@
+.main-form{
+    margin: 20px;
+    width: 400px;
+    height: 460px;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+}
+
+.inside-div{
+    margin: 0;
+    padding: 4px;
+    width: 360px;
+    height: 75px;
+    border: 1px solid gray;
+    box-shadow: 10px 0 0 0 rgba(0, 0, 0, 0.05);
+}
+
+.form-Action-label{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: normal;
+}
+
+.mc4wp-Action-label{
+    margin-left: 10px;
+    font-family: 'Delius', cursive;
+    font-size: 10pt;
+    font-weight: bold;
+    background-color: rgb(239, 238, 238);
+    color: black;
+}
+
+.empty-row{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.smaller-empty-row{
+    height: 12px;
+}
+
+.bigger-input-text{
+    width: 400px;
+}
+
+.label-text{
+    display: block;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 4px;
+    padding: 0;
+}
+
+.select-multiple-container {
+    display: inline-block;
+    padding: 0.3em;
+ 
+    background-image: url(arrows.jpg);
+    background-position: 97%, 100%;
+    background-size: 0.8em 0.9em;
+    background-repeat: no-repeat; 
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+}
+    
+.select-multiple {
+    width: 8em;
+    height: calc(1.5em - 2px);
+
+    background-color: transparent;
+    border: 0;
+    outline: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+    
+.select-multiple::-webkit-scrollbar {
+    width: 15px;
+    
+    background-color: transparent;
+}
+    
+.select-multiple::-webkit-scrollbar-button {
+    height: 15px;
+    
+    background-color: transparent;
+}
+
+.select-multiple-option{
+    padding-bottom: 0;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .select-multiple {
+        height: 1em;
+    }
+ }
+
+.choices-text{
+    margin-top: 4px;
+    margin-bottom: 5px;
+    width: 310px;
+    height: 20px;
+}
+
+.container{
+    position: relative;
+    padding-left: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container .container-hidden-radio,
+.container #container-hidden-check{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}  
+
+.custom-radio-check{
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+
+.container:hover .container-hidden-radio ~ .custom-radio-check{
+    background-color: #ccc;
+}
+
+.container .container-hidden-radio:checked ~ .custom-radio-check{
+    background-color: white;
+}
+
+.custom-radio-check:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container .container-hidden-radio:checked ~ .custom-radio-check:after{
+    display: block;
+}
+
+.container .custom-radio-check:after{
+    top: 4px;
+    left: 4px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #2196F3;
+}
+
+.custom-checkbox-check{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border: 1px solid gray;
+  }
+  
+.container:hover #container-hidden-check ~ .custom-checkbox-check{
+    background-color: #ccc;
+}
+
+.container #container-hidden-check:checked ~ .custom-checkbox-check{
+    background-color: white;
+}
+
+.custom-checkbox-check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container #container-hidden-check:checked ~ .custom-checkbox-check:after{
+    display: block;
+}
+
+.container .custom-checkbox-check:after{
+    left: 4px;
+    top: 1px;
+    width: 3px;
+    height: 8px;
+    border: solid #2196F3;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(40deg);
+    -ms-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+
+.styled-button{
+    border: 0;
+    line-height: 1.75;
+    padding: 3px 8px 3px 8px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background-color: rgb(0, 134, 190);
+
+}
+
+.styled-button:hover{
+    background-color: rgb(0, 150, 200);
+}
+
+.styled-button:active{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.close-icon{
+    position: relative;
+    padding: 0;
+    border:1px solid transparent;
+    background-color: transparent;
+    opacity: 0.6;
+    display: inline-block;
+    overflow: visible;
+    vertical-align: middle;
+}
+
+.close-icon:hover{
+    opacity: 1;
+}
+
+.close-icon:after{
+    content: "\2716";
+    display: block;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    left: 2px;
+    bottom: 3px;
+    text-align: center;
+    color: gray;
+    cursor: pointer;
+}

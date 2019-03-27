@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Form Task two</title>
+    <link rel="stylesheet" href="resources/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius|Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <form action="#" class="main-form">
+        <span class="form-Action-label">Form Action</span>
+        <span class="mc4wp-Action-label">_mc4wp_action</span>
+        <div class="empty-row">
+            This field will allow your visitors to choose whether they would like to subscribe or unsubscribe
+        </div>
+        <label><span class="label-text">Field Label</span></label>
+        <input type="text" class="bigger-input-text" value="Form Action">
+        <div class="empty-row"></div>
+        <label><span class="label-text">Choice Type</span></label>
+        <div class="select-multiple-container">
+            <select class="select-multiple" multiple size="1">
+                <option class="select-multiple-option" value="radio">Radio Buttons</option>
+                <option class="select-multiple-option" value="check">Checkbox</option>
+                <option class="select-multiple-option" value="button">Button</option>
+            </select>
+        </div>
+        <div class="empty-row"></div>
+        <label><span class="label-text">Choices</span></label>
+            <div class="inside-div">
+                <label class="container">
+                    <input type="radio" class="container-hidden-radio" name="radio-button-group">
+                    <span class="custom-radio-check"></span>
+                </label>
+                <input class="choices-text" type="text" value="Subscribe">
+                <button class="close-icon" type="reset"></button>
+                <label class="container">
+                    <input type="radio" class="container-hidden-radio" name="radio-button-group">
+                    <span class="custom-radio-check"></span>
+                </label>
+                <input class="choices-text" type="text" value="Unsubscribe">
+                <button class="close-icon" type="reset"></button>
+            </div>
+        <div class="smaller-empty-row"></div>
+        <label class="container">
+            <input type="checkbox" id="container-hidden-check">
+            <span class="custom-checkbox-check"></span>
+        </label>
+        <label for="container-hidden-check">Wrap in paragraph tags?</label>
+        <div class="empty-row"></div>
+        <input class="styled-button" type="button" value="Add to form" onClick="window.open('https://google.com')">
+    </form>
+</body>
+
+</html>
