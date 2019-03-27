@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Form Task two</title>
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="resources/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Delius|Open+Sans" rel="stylesheet">
 </head>
@@ -19,12 +20,13 @@
         <input type="text" class="bigger-input-text" value="Form Action">
         <div class="empty-row"></div>
         <label><span class="label-text">Choice Type</span></label>
-        <select class="select-with-arrows">
-            <option>Radio Buttons</option>
-            <option>No external</option>
-            <option>No wrapper</option>
-            <option>Annoying</option>
-        </select>
+        <div class="select-multiple-container">
+            <select class="select-multiple" multiple size="1">
+                <option class="select-multiple-option" value="radio">Radio Buttons</option>
+                <option class="select-multiple-option" value="check">Checkbox</option>
+                <option class="select-multiple-option" value="button">Button</option>
+            </select>
+        </div>
         <div class="empty-row"></div>
         <label><span class="label-text">Choices</span></label>
             <div class="inside-div">
