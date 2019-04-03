@@ -1,0 +1,24 @@
+.about-image{
+    background-image: url("../Images/about-img.jpg");
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    width: 25%;
+    height: 350px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 960px) {
+    .main__about-image {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .main__about-image {
+        width: 100%;
+    }
+}

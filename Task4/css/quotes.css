@@ -1,0 +1,40 @@
+.quotes{
+    width: 100%;
+    min-height: min-content;
+
+    font-family: 'Source Sans';
+    color: white;
+}
+
+.quotes__image {
+    text-align: center;
+}
+
+.quotes__icon {
+    font-size: 36px;
+    margin-bottom: 28px;
+    transition: 1s ease-in-out;
+}
+
+.quotes__icon:hover{
+    color: rgb(228, 174, 88);
+    transform: rotate(360deg);
+}
+
+.quotes__title{
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 50px;
+}
+
+.quotes__subtitle{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.quotes__subtitle_color-grey{
+    color: grey;
+}
