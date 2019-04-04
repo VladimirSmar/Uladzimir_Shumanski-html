@@ -1,7 +1,7 @@
 .-sv-home-info-container{
     width: 50%;
     height: 800px;
-    padding: 40px;
+    padding: 20px 30px 20px 45px;
     box-sizing: border-box;
     background-color: rgb(240, 226, 215);
     color: grey;
@@ -16,12 +16,12 @@
 .-sv-home-info__title{
     font-size: 12px;
     line-height: 20px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 .-sv-home-info__subtitle{
-    font-size: 40px;
+    font-size: 42px;
 }
 
 .-sv-home-info__description{
@@ -38,7 +38,7 @@
 
 .-sv-home-info__button{
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     background-color: transparent;
     color: black;    
     display: inline-block;
@@ -54,7 +54,7 @@
 
 .-sv-home-info_button-sb{
     text-align: center;
-    width: 140px;
+    width: 130px;
 }
 
 .-sv-home-info__button:hover {
