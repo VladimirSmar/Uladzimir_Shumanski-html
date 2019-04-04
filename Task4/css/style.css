@@ -4,9 +4,10 @@
 @import url("normalize.css");
 
 @import url("body.css");
-@import url("header_wrapper.css");
-@import url("logo-container.css");
-@import url("greetings-container.css");
+@import url("home-container.css");
+@import url("home-image.css");
+@import url("home-info.css");
+@import url("menu.css");
 @import url("about-container.css");
 @import url("about-description.css");
 @import url("about-image.css");
@@ -21,16 +22,8 @@
 @import url("education-info.css");
 @import url("quotes-container.css");
 @import url("quotes.css");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
-@import url("");
+@import url("contacts-container.css");
+@import url("contacts-form.css");
+@import url("contacts-image.css");
+@import url("contacts-info.css");
+@import url("footer.css");

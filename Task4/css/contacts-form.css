@@ -1,0 +1,90 @@
+.-sv-contacts-form{
+    width: 50%;
+    height: 600px;
+    padding: 32px 70px 45px 33px;
+    box-sizing: border-box;
+    background-color: rgb(233, 113, 76);
+    color: rgb(248, 248, 229);
+}
+
+@media screen and (max-width: 1024px) {
+    .-sv-main__contacts-form {
+        width: 100%;
+    }
+}
+
+.-sv-contacts-form__title{
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 16px;
+}
+
+.-sv-contacts-form__subtitle{
+    font-size: 16px;
+    margin-top: 17px;
+    padding-bottom: 20px;
+}
+
+.-sv-contacts-form-inputs{
+    width: 100%;
+    background-color: transparent;
+    color: rgb(248, 248, 229);
+    border: 1px solid rgb(228, 174, 88);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: 0;
+    padding: 12px;
+    margin: 25px auto 0 auto;
+    font-size: 18px;
+}
+
+.-sv-contacts-form-inputs:focus{
+    border: 1px solid green;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.-sv-contacts-form-inputs::placeholder{
+    color: rgb(248, 248, 229);
+}
+
+.-sv-contacts-form__button-container{
+    margin: 30px auto 30px 10px;
+}
+
+.-sv-contacts-form__button{
+    background-color: white;
+    color: black;    
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+    line-height: 1.333333;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.-sv-contacts-form__button_lb{
+    text-align: center;
+    width: 260px;
+}
+
+@media screen and (max-width: 576px) {
+    .-sv-contacts-form__button_lb {
+        width: 200px;
+    }
+}
+
+.-sv-contacts-form__button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+    transition-duration: 0.3s;
+}
+
+.-sv-contacts-form__button:active{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+    transition-duration: 0.1s;
+}

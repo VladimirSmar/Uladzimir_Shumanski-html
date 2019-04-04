@@ -1,4 +1,4 @@
-.experiences-info{
+.-sv-experiences-info{
     width: 50%;
     height: 380px;
     padding: 35px 30px 45px 55px;
@@ -7,51 +7,50 @@
     color: rgb(243, 241, 220);
 }
 
-@media screen and (max-width: 960px) {
-    .main__experiences-info {
+@media screen and (max-width: 1024px) {
+    .-sv-main__experiences-info {
         width: 100%;
     }
 }
 
-.experiences-info__title{
+.-sv-experiences-info__title{
     font-size: 42px;
     font-weight: 400;
     line-height: 48px;
     margin-bottom: 16px;
 }
 
-.experiences-info__subtitle{
+.-sv-experiences-info__subtitle{
     font-size: 16px;
-    font-weight: 500;
     margin-top: 17px;
     padding-bottom: 20px;
 }
 
-.experiences-info__subtitle_color-darker-white{
+.-sv-experiences-info__subtitle_color-darker-white{
     color: rgb(221, 220, 200);
 }
 
-.experiences-info__experience-and-icon{
+.-sv-experiences-info__experience-and-icon{
     display: flex;
     margin-top: 35px;
 }
 
-.experiences-info__icon{
+.-sv-experiences-info__icon{
     font-size: 32px;
     padding-top: 5px;
 }
 
-.experiences-info__experience{
+.-sv-experiences-info__experience{
     margin-left: 25px;
 }
 
-.expetiences-info__experience_profession{
+.-sv-expetiences-info__experience_profession{
     font-size: 26px;
     padding-bottom: 15px;
 }
 
-.experiences-info__experience_date{
+.-sv-experiences-info__experience_date{
     font-size: 16px;
     font-weight: bold;
-    color: rgb(56, 51, 51);
+    color: rgb(68, 65, 65);
 }

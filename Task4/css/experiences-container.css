@@ -1,15 +1,15 @@
-.experiences-container{
+.-sv-experiences-container{
     display: flex;
 }
 
-@media screen and (max-width: 960px) {
-    .main__experiences-container {
+@media screen and (max-width: 1024px) {
+    .-sv-main__experiences-container {
         flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .main__experiences-container  {
+    .-sv-main__experiences-container  {
         flex-direction: column;
     }
 }

@@ -1,8 +1,8 @@
-.experiences-image{
+.-sv-experiences-image{
     background-image: url("../Images/experience-img.jpg");
     background-position: center 0;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 120% 150%;
 
     width: 50%;
     height: 380px;
@@ -10,8 +10,8 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 960px) {
-    .main__experiences-image {
+@media screen and (max-width: 1024px) {
+    .-sv-main__experiences-image {
         width: 100%;
     }
 }

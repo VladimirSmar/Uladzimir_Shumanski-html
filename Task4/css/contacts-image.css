@@ -1,24 +1,24 @@
-.-sv-about-image{
-    background-image: url("../Images/about-img.jpg");
+.-sv-contacts-image{
+    background-image: url("../Images/contact-img.jpg");
     background-position: 50% 0;
     background-repeat: no-repeat;
-    background-size: 300% 170%;
+    background-size: 250% 100%;
 
     width: 25%;
-    height: 350px;
+    height: 600px;
     padding: 30px;
     box-sizing: border-box;
 }
 
 @media screen and (max-width: 1024px) {
-    .-sv-main__about-image {
+    .-sv-main__contacts-image {
         width: 50%;
     }
 }
 
 
 @media screen and (max-width: 576px) {
-    .-sv-main__about-image {
+    .-sv-main__contacts-image {
         width: 100%;
     }
 }

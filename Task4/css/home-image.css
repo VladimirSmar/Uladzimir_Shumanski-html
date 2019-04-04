@@ -1,0 +1,26 @@
+.-sv-home-image-container{
+    background-image: url("../Images/home-img.jpg");
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 50%;
+    height: 800px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+    .-sv-header__home-image {
+        width: 100%;
+    }
+}
+
+.-sv-home-image__logo{
+    display: inline-block;
+    margin: 30px auto auto 25%;
+
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px white;
+}

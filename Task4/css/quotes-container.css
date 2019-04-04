@@ -1,8 +1,8 @@
-.cards-container {
+.-sv-cards-container {
     display: flex;
 }
 
-.main__quotes-container{
+.-sv-main__quotes-container{
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../Images/quotes-bg.jpg') center 20% no-repeat;
     -webkit-background-size: cover;
     -moz-background-size:  cover;
