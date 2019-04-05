@@ -2,10 +2,10 @@
     background-image: url("../Images/experience-img.jpg");
     background-position: center 0;
     background-repeat: no-repeat;
-    background-size: 120% 150%;
+    background-size: cover;
 
     width: 50%;
-    height: 380px;
+    height: 390px;
     padding: 30px;
     box-sizing: border-box;
 }

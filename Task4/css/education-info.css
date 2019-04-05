@@ -1,7 +1,7 @@
 .-sv-educations-info{
     width: 50%;
     height: 430px;
-    padding: 25px 20px 35px 42px;
+    padding: 25px 20px 45px 42px;
     box-sizing: border-box;
     background-color: rgb(228, 174, 88);
     color: rgb(241, 239, 214);
@@ -10,6 +10,7 @@
 @media screen and (max-width: 1024px) {
     .-sv-main__educations-info {
         width: 100%;
+        min-height: min-content;
     }
 }
 

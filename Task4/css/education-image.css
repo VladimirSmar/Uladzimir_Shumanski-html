@@ -2,7 +2,7 @@
     background-image: url("../Images/education-img.jpg");
     background-position: center 0;
     background-repeat: no-repeat;
-    background-size: 120% 130%;
+    background-size: cover;
 
     width: 50%;
     height: 430px;

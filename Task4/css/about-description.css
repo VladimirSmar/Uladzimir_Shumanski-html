@@ -8,6 +8,7 @@
 @media screen and (max-width: 1024px) {
     .-sv-main__about-description {
         width: 100%;
+        min-height: min-content;
     }
 }
 

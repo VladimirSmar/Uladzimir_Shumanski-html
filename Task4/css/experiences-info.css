@@ -1,6 +1,6 @@
 .-sv-experiences-info{
     width: 50%;
-    height: 380px;
+    height: 390px;
     padding: 35px 30px 45px 55px;
     box-sizing: border-box;
     background-color: rgb(233, 113, 76);
@@ -10,6 +10,7 @@
 @media screen and (max-width: 1024px) {
     .-sv-main__experiences-info {
         width: 100%;
+        min-height: min-content;
     }
 }
 
