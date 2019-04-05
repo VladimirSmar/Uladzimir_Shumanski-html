@@ -1,0 +1,76 @@
+.-sv-home-info-container{
+    width: 50%;
+    height: 800px;
+    padding: 20px 30px 20px 45px;
+    box-sizing: border-box;
+    background-color: rgb(240, 226, 215);
+    color: grey;
+}
+
+@media screen and (max-width: 1024px) {
+    .-sv-header__home-info {
+        width: 100%;
+    }
+}
+
+.-sv-home-info__title{
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.-sv-home-info__subtitle{
+    font-size: 42px;
+}
+
+.-sv-home-info__description{
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+    margin-top: 17px;
+    padding-bottom: 20px;
+}
+
+.-sv-home-info__button-container{
+    margin: 30px auto 30px auto;
+}
+
+.-sv-home-info__button{
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    background-color: transparent;
+    color: black;    
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    font-size: 13px;
+    line-height: 1.333333;
+    border: 3px solid black;
+    border-radius: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.-sv-home-info_button-sb{
+    text-align: center;
+    width: 130px;
+}
+
+.-sv-home-info__button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+    transition-duration: 0.3s;
+}
+
+.-sv-home-info__button:active{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+    transition-duration: 0.1s;
+}
+
+.-sv-home-info_color-bold{
+    font-weight: 500;
+}
+
+.-sv-home-info_color-black{
+    color: black;
+}

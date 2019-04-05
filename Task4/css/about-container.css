@@ -1,0 +1,15 @@
+.-sv-about-container{
+    display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+    .-sv-main__about-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .-sv-main__about-container  {
+        flex-direction: column;
+    }
+}

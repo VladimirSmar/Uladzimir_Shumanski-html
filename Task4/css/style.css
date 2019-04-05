@@ -1,0 +1,29 @@
+@import url("SourceSansFont.css");
+@import url("../Fonts/css/all.css");
+
+@import url("normalize.css");
+
+@import url("body.css");
+@import url("home-container.css");
+@import url("home-image.css");
+@import url("home-info.css");
+@import url("menu.css");
+@import url("about-container.css");
+@import url("about-description.css");
+@import url("about-image.css");
+@import url("about-bars.css");
+@import url("cards-container.css");
+@import url("cards.css");
+@import url("experiences-container.css");
+@import url("experiences-image.css");
+@import url("experiences-info.css");
+@import url("education-container.css");
+@import url("education-image.css");
+@import url("education-info.css");
+@import url("quotes-container.css");
+@import url("quotes.css");
+@import url("contacts-container.css");
+@import url("contacts-form.css");
+@import url("contacts-image.css");
+@import url("contacts-info.css");
+@import url("footer.css");

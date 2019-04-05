@@ -1,0 +1,41 @@
+.-sv-about-description{
+    width: 50%;
+    height: 350px;
+    padding: 40px 30px 70px 30px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+    .-sv-main__about-description {
+        width: 100%;
+        min-height: min-content;
+    }
+}
+
+.-sv-about-description__title{
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 16px;
+}
+
+.-sv-about-description__subtitle{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 17px;
+    margin-bottom: 24px;
+}
+
+.-sv-about-description__subtitle_color-golden{
+    color: rgb(223, 189, 126)
+}
+
+.-sv-about-description__text{
+    font-weight: 500;
+    padding-top: 10px;
+    line-height: 28px;
+}
+
+.-sv-about-description__text_color-grey{
+    color: rgb(168, 158, 158);
+}

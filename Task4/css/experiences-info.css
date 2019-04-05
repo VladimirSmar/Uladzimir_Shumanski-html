@@ -1,0 +1,57 @@
+.-sv-experiences-info{
+    width: 50%;
+    height: 390px;
+    padding: 35px 30px 45px 55px;
+    box-sizing: border-box;
+    background-color: rgb(233, 113, 76);
+    color: rgb(243, 241, 220);
+}
+
+@media screen and (max-width: 1024px) {
+    .-sv-main__experiences-info {
+        width: 100%;
+        min-height: min-content;
+    }
+}
+
+.-sv-experiences-info__title{
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 16px;
+}
+
+.-sv-experiences-info__subtitle{
+    font-size: 16px;
+    margin-top: 17px;
+    padding-bottom: 20px;
+}
+
+.-sv-experiences-info__subtitle_color-darker-white{
+    color: rgb(221, 220, 200);
+}
+
+.-sv-experiences-info__experience-and-icon{
+    display: flex;
+    margin-top: 35px;
+}
+
+.-sv-experiences-info__icon{
+    font-size: 32px;
+    padding-top: 5px;
+}
+
+.-sv-experiences-info__experience{
+    margin-left: 25px;
+}
+
+.-sv-expetiences-info__experience_profession{
+    font-size: 26px;
+    padding-bottom: 15px;
+}
+
+.-sv-experiences-info__experience_date{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(68, 65, 65);
+}

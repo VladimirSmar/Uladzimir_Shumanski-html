@@ -1,0 +1,72 @@
+.-sv-card {
+    font-family: 'Source Sans';
+    background-color: white;
+}
+
+.-sv-card__image {
+    text-align: center;
+}
+
+.-sv-card__icon {
+    font-size: 45px;
+    margin: 15px;
+}
+
+.-sv-card__title {
+    font-size: 26px;
+    line-height: 48px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+
+.-sv-card__description {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.-sv-main__cards-container_card {
+    width: calc(100% / 4);
+    min-height: min-content;
+    padding: 30px 2.5%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+    .-sv-main__cards-container_card {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .-sv-main__cards-container_card {
+        width: 100%;
+    }
+}
+
+.-sv-card_color-golden {
+    background-color: rgb(228, 174, 88);
+    color: rgb(255, 252, 230);
+}
+
+.-sv-card_color-orange {
+    background-color: rgb(233, 113, 76);
+    color: rgb(255, 252, 230);
+}
+
+.-sv-card_color-black {
+    background-color: black;
+    color: rgb(250, 246, 236);
+}
+
+.-sv-card_color-white {
+    background-color: white;
+    color: black;
+}
+
+.-sv-card__description_color-grey{
+    color: rgb(168, 158, 158);
+}

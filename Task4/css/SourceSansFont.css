@@ -1,0 +1,29 @@
+@font-face{
+    font-family: "Source Sans";
+    src: url("../Fonts/SourceSansPro-Regular.otf");
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "Source Sans";
+    src: url("../Fonts/SourceSansPro-Bold.otf");
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: "Source Sans";
+    src: url("../Fonts/SourceSansPro-Light.otf");
+    font-weight: lighter;
+}
+
+@font-face{
+    font-family: "Source Sans";
+    src: url("../Fonts/SourceSansPro-Regular.otf");
+    font-weight: 500;
+} 
+
+@font-face{
+    font-family: "Source Sans";
+    src: url("../Fonts/SourceSansPro-Semibold.otf");
+    font-weight: 600;
+}

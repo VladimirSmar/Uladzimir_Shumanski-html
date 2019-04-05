@@ -1,0 +1,73 @@
+.-sv-home-info__menu-container{
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.-sv-home-info__menu {
+    background: transparent;
+}
+
+.-sv-home-info__link-list, 
+.-sv-home-info__item {
+    display: inline-block;
+}
+
+.-sv-home-info__hamburger-label,
+.-sv-home-info__hamburger-check {
+    display: none;
+}
+
+.-sv-home-info__hamburger-label {
+    width: 100%;
+    color: white;
+    background: #a02620;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+.-sv-home-info__link-list {
+    list-style-type: none;
+}
+
+.-sv-home-info__item {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.-sv-home-into__link {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: grey;
+    text-decoration: none;
+}
+
+.-sv-home-into__link:hover{
+    color: rgb(245, 188, 97);
+}
+
+.-sv-home-into__link:active{
+    color: red;
+}
+
+@media screen and (max-width: 1280px){
+    .-sv-home-info__hamburger-label {
+        display: inline-block;
+    }
+
+    .-sv-home-info__item {
+        display: block;
+        border-bottom: 1px solid #333;
+    }
+
+    .-sv-home-info__link-list {
+        display: none;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .-sv-home-info__hamburger-check:checked ~ .-sv-home-info__link-list {
+        display: block;
+    }
+}
