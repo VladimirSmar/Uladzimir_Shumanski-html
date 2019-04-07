@@ -1,15 +1,15 @@
-.-sv-contacts-container{
+.-sv-contacts-container__content{
     display: flex;
 }
 
 @media screen and (max-width: 1024px) {
-    .-sv-main__contacts-container {
+    .-sv-contacts-container__content {
         flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .-sv-main__contacts-container  {
+    .-sv-contacts-container__content {
         flex-direction: column;
     }
 }

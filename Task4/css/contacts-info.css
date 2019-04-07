@@ -52,6 +52,6 @@
 
 @media screen and (max-width: 576px) {
     .-sv-main__contacts-info {
-        width: 100%;
+        width: 100%;  
     }
 }

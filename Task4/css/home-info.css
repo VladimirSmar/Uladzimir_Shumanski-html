@@ -10,6 +10,7 @@
 @media screen and (max-width: 1024px) {
     .-sv-header__home-info {
         width: 100%;
+        height: 100%; 
     }
 }
 

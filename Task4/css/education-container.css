@@ -1,15 +1,15 @@
-.-sv-educations-container{
+.-sv-educations-container__content{
     display: flex;
 }
 
 @media screen and (max-width: 1024px) {
-    .-sv-main__educations-container {
+    .-sv-educations-container__content {
         flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .-sv-main__educations-container  {
+    .-sv-educations-container__content {
         flex-direction: column;
     }
 }

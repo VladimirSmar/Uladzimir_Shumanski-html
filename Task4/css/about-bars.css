@@ -16,6 +16,7 @@
 @media screen and (max-width: 576px) {
     .-sv-main__about-bars {
         width: 100%;
+        height: 100%; 
     }
 }
 

@@ -10,6 +10,7 @@
 @media screen and (max-width: 1024px) {
     .-sv-main__contacts-form {
         width: 100%;
+        height: 100%; 
     }
 }
 
@@ -38,6 +39,7 @@
     padding: 12px;
     margin: 25px auto 0 auto;
     font-size: 18px;
+    resize: none;
 }
 
 .-sv-contacts-form-inputs:focus{

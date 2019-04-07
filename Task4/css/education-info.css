@@ -10,7 +10,7 @@
 @media screen and (max-width: 1024px) {
     .-sv-main__educations-info {
         width: 100%;
-        min-height: min-content;
+        height: 100%; 
     }
 }
 
