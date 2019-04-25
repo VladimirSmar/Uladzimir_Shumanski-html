@@ -63,15 +63,15 @@ DatepickerRenderer.prototype.DrawMonth = function (headerText) {
     monthInfo.innerText = headerText;
 }
 
-DatepickerRenderer.prototype._DrawOtherMonthDayBlocks = function(otherDayBlocksCount, parentElement)
+DatepickerRenderer.prototype.DrawOtherMonthDays = function(otherMonthDaysCount, parentElement)
 {
-    while(otherDayBlocksCount>0)
+    while(otherMonthDaysCount > 0)
     {
-        var otherDay = document.createElement("div");
-        otherDay.setAttribute("class", "sv-datepicker__day sv-datepicker__other-month-day");
-        parentElement.appendChild(otherDay);
+        var otherMonthDay = document.createElement("div");
+        otherMonthDay.setAttribute("class", "sv-datepicker__day sv-datepicker__other-month-day");
+        parentElement.appendChild(otherMonthDay);
 
-        otherDayBlocksCount--;
+        otherMonthDaysCount--;
     }
 }
 
@@ -79,7 +79,7 @@ DatepickerRenderer.prototype.DrawDays = function (firstDayOnWeek, daysCount, tod
 {
     var daysBlock = document.querySelector(".sv-datepicker__days-block");
     
-    if (daysBlock!=null)
+    if (daysBlock != null)
     {
         while (daysBlock.firstChild) {
             daysBlock.removeChild(daysBlock.firstChild);
@@ -90,25 +90,25 @@ DatepickerRenderer.prototype.DrawDays = function (firstDayOnWeek, daysCount, tod
 
     var week;
 
-    for (var i = 1; i<=daysCount; i++)
+    for (var i = 1; i <= daysCount; i++)
     {
-        if (i == 1 || dayOfWeek==0)
+        if (i == 1 || dayOfWeek == 0)
         {
             week = document.createElement("div");
             week.setAttribute("class", "sv-datepicker__week");
             daysBlock.appendChild(week);
         }
 
-        if(i==1)
+        if(i == 1)
         {
-            this._DrawOtherMonthDayBlocks(firstDayOnWeek, week);
+            this.DrawOtherMonthDays(firstDayOnWeek, week);
         }
         
         day = document.createElement("div");
         day.className = "sv-datepicker__day";
         day.innerHTML = i;
 
-        if (i===todayDay)
+        if (i === todayDay)
         {
             day.className += " sv-datepicker__day_today";
         }
@@ -116,18 +116,11 @@ DatepickerRenderer.prototype.DrawDays = function (firstDayOnWeek, daysCount, tod
         week.appendChild(day);   
             
 
-        if(i==daysCount)
+        if(i == daysCount)
         {
-            this._DrawOtherMonthDayBlocks(6-dayOfWeek, week);
+            this.DrawOtherMonthDays(6-dayOfWeek, week);
         }
 
-        if (dayOfWeek==6)
-        {              
-            dayOfWeek=0;         
-        }
-        else
-        {
-            dayOfWeek++;
-        }
+        (dayOfWeek == 6) ? dayOfWeek = 0 : dayOfWeek++;
     }
 }
