@@ -32,7 +32,7 @@ DatepickerRenderer.prototype.CreateBody = function () {
     header.appendChild(buttonPrevMonth);
 
     var monthInfo = document.createElement("div");
-    monthInfo.setAttribute("class", "sv-datepicker__month sv-datepicker_month-user-view");
+    monthInfo.setAttribute("class", "sv-datepicker__current-month sv-datepicker_month-user-view");
     header.appendChild(monthInfo);
 
     var buttonNextMonth = document.createElement("div");
@@ -59,68 +59,77 @@ DatepickerRenderer.prototype.CreateBody = function () {
 }
 
 DatepickerRenderer.prototype.DrawMonth = function (headerText) {
-    var monthInfo = document.querySelector(".sv-datepicker__month");
+    var monthInfo = document.querySelector(".sv-datepicker__current-month");
     monthInfo.innerText = headerText;
 }
 
-DatepickerRenderer.prototype.DrawOtherMonthDays = function(otherMonthDaysCount, parentElement)
-{
-    while(otherMonthDaysCount > 0)
-    {
-        var otherMonthDay = document.createElement("div");
-        otherMonthDay.setAttribute("class", "sv-datepicker__day sv-datepicker__other-month-day");
-        parentElement.appendChild(otherMonthDay);
+DatepickerRenderer.prototype.DrawPreviousMonthDays = function(previousMonthDaysCount, parentElement, previousMonthTotalDaysCount) {
+    while(previousMonthDaysCount > 0) {
+        var previousMonthDay = document.createElement("div");
+        previousMonthDay.setAttribute("class", "sv-datepicker__day sv-datepicker__other-month-day");
+        previousMonthDay.innerHTML = previousMonthTotalDaysCount - previousMonthDaysCount + 1;
+        parentElement.appendChild(previousMonthDay);
 
-        otherMonthDaysCount--;
+
+        previousMonthDaysCount--;
     }
 }
 
-DatepickerRenderer.prototype.DrawDays = function (firstDayOnWeek, daysCount, todayDay) 
-{
+DatepickerRenderer.prototype.DrawNextMonthDays = function(nextMonthDaysCount, parentElement, nextMonthDayDate) {
+    while(nextMonthDaysCount > 0) {
+        var nextMonthDay = document.createElement("div");
+        nextMonthDay.setAttribute("class", "sv-datepicker__day sv-datepicker__other-month-day");
+        nextMonthDay.innerHTML = nextMonthDayDate;
+        parentElement.appendChild(nextMonthDay);
+
+        nextMonthDayDate++;
+        nextMonthDaysCount--;
+    }
+}
+
+DatepickerRenderer.prototype.DrawDays = function (firstDayOnWeek, daysCount, todayDay, previousMonthTotalDaysCount) {
     var daysBlock = document.querySelector(".sv-datepicker__days-block");
     
-    if (daysBlock != null)
-    {
+    if (daysBlock != null) {
         while (daysBlock.firstChild) {
             daysBlock.removeChild(daysBlock.firstChild);
         }
     }
     
     var dayOfWeek = firstDayOnWeek; 
-
     var week;
+    var nextMonthDayDate = 1;
 
-    for (var i = 1; i <= daysCount; i++)
-    {
-        if (i == 1 || dayOfWeek == 0)
-        {
+    for (var i = 1; i <= daysCount; i++) {
+        if (i == 1 || dayOfWeek == 0) {
             week = document.createElement("div");
             week.setAttribute("class", "sv-datepicker__week");
             daysBlock.appendChild(week);
         }
 
-        if(i == 1)
-        {
-            this.DrawOtherMonthDays(firstDayOnWeek, week);
+        if(i == 1) {
+            this.DrawPreviousMonthDays(firstDayOnWeek, week, previousMonthTotalDaysCount);
         }
         
         day = document.createElement("div");
         day.className = "sv-datepicker__day";
         day.innerHTML = i;
 
-        if (i === todayDay)
-        {
+        if (i === todayDay) {
             day.className += " sv-datepicker__day_today";
         }
 
         week.appendChild(day);   
             
 
-        if(i == daysCount)
-        {
-            this.DrawOtherMonthDays(6-dayOfWeek, week);
+        if(i == daysCount) {
+            this.DrawNextMonthDays(6-dayOfWeek, week, nextMonthDayDate);
         }
 
         (dayOfWeek == 6) ? dayOfWeek = 0 : dayOfWeek++;
     }
+}
+
+DatepickerRenderer.prototype.DrawWeatherWindow = function() {
+    
 }

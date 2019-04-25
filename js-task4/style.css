@@ -1,17 +1,14 @@
-.sv-container_content
-{
+.sv-container_content {
     margin: 0 auto;
 }
 
-.sv-datepicker__body
-{
+.sv-datepicker__body {
     border: 1px solid black;
     width: 400px;
     padding: 3px;
 }
 
-.sv-datepicker__header
-{
+.sv-datepicker__header {
     display: flex;
     justify-content: space-around;
 
@@ -23,22 +20,19 @@
     background-color: rgb(236, 79, 79);
 }
 
-.sv-datepicker_month-user-view
-{
+.sv-datepicker_month-user-view {
     cursor: pointer;
     user-select: none;
 }
 
-.sv-datepicker__days-of-week-line
-{
+.sv-datepicker__days-of-week-line {
     display: flex;
     justify-content: space-around;
 
     margin: 10px 0;
 }
 
-.sv-datepicker__day-of-week
-{
+.sv-datepicker__day-of-week {
     width: 20px;
 
     padding: 0 3px;
@@ -46,16 +40,14 @@
     font-weight: bold;
 }
 
-.sv-datepicker__week
-{
+.sv-datepicker__week {
     display: flex;
     justify-content: space-around;
 
     margin: 3px 0;
 }
 
-.sv-datepicker__day
-{
+.sv-datepicker__day {
     border: 1px solid black;
     border-radius: 15px;
     background-color: #dddddd;
@@ -69,25 +61,28 @@
     cursor: pointer;
 }
 
-.sv-datepicker__other-month-day
-{
+.sv-datepicker__other-month-day {
     background-color: #f1eeee;
 
     filter: blur(1px);
+
+    pointer-events: none;
 }
 
-.sv-datepicker__day_today
-{
-    background-color: #f7ff85;
-}
-
-.sv-datepicker__day:hover{
-    background-color: darkslateblue;
+.sv-datepicker__day_today {
+    background-color: rgb(236, 79, 79);
+    
     color: white;
 }
 
-.sv-datepicker__day_choosed
-{
+.sv-datepicker__day:hover{
+    background-color: rgb(68, 132, 250);
+
+    color: white;
+}
+
+.sv-datepicker__day_choosed {
     background-color: darkslateblue;
+
     color: white;
 }
