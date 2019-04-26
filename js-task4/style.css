@@ -62,9 +62,8 @@
 }
 
 .sv-datepicker__other-month-day {
-    background-color: #f1eeee;
-
-    filter: blur(1px);
+    border: none;
+    background-color: #f1f1f1;
 
     pointer-events: none;
 }
@@ -86,3 +85,4 @@
 
     color: white;
 }
+

@@ -9,45 +9,54 @@ setHandlers();
 
 
 function setHandlers() {
-    var buttonPrevMonth = document.querySelector(".sv-datepicker__prev-month");
 
-    buttonPrevMonth.onclick = function() {
+    function previousMonthClickHandler() {
         calendar.setPreviousMonth();
         view.DrawMonth(calendar.getMonthName());
         view.DrawDays(calendar.getFirstDayInfo(), calendar.getDaysInMonthCount(), calendar.isToday(), calendar.getDaysInPreviousMonthCount());
     }
 
-    var buttonCurrentMonth = document.querySelector(".sv-datepicker__current-month");
-
-    buttonCurrentMonth.onclick = function() {
+    function currentMonthClickHandler() {
         calendar.setCurrentMonth();
         view.DrawMonth(calendar.getMonthName());
         view.DrawDays(calendar.getFirstDayInfo(), calendar.getDaysInMonthCount(), calendar.isToday(), calendar.getDaysInPreviousMonthCount());
     }
 
-    var buttonNextMonth = document.querySelector(".sv-datepicker__next-month");
-
-    buttonNextMonth.onclick = function() {
+    function nextMonthClickHandler() {
         calendar.setNextMonth();
         view.DrawMonth(calendar.getMonthName());
         view.DrawDays(calendar.getFirstDayInfo(), calendar.getDaysInMonthCount(), calendar.isToday(), calendar.getDaysInPreviousMonthCount());
     }
 
-    var buttonChooseDay = document.querySelector(".sv-datepicker__days-block");
-
-    buttonChooseDay.onclick = function() {
+    function chooseMonthDayHandler(event) {
         var calendarDaysBody = document.querySelector(".sv-datepicker__days-block")
-        this.choosedElement = event.target;
+        var choosedElement = event.target;
         var previousChoosedElement = calendarDaysBody.getElementsByClassName("sv-datepicker__day_choosed")[0];
-        if(this.choosedElement.classList.contains("sv-datepicker__day")) {
-            if(this.choosedElement.classList.contains("sv-datepicker__day_choosed")) {
-                this.choosedElement.classList.remove("sv-datepicker__day_choosed");
+        if(choosedElement.classList.contains("sv-datepicker__day")) {
+            if(choosedElement.classList.contains("sv-datepicker__day_choosed")) {
+                choosedElement.classList.remove("sv-datepicker__day_choosed");
             } else if (previousChoosedElement !== undefined) {
                 previousChoosedElement.classList.remove("sv-datepicker__day_choosed");
-                this.choosedElement.className += " sv-datepicker__day_choosed";
+                choosedElement.classList.add("sv-datepicker__day_choosed");
             } else {
-                this.choosedElement.className += " sv-datepicker__day_choosed";
+                choosedElement.classList.add("sv-datepicker__day_choosed");
             }
         }
     }
+
+
+
+    var buttonPrevMonth = document.querySelector(".sv-datepicker__prev-month");
+    buttonPrevMonth.addEventListener("click", previousMonthClickHandler);
+
+    var buttonCurrentMonth = document.querySelector(".sv-datepicker__current-month");
+    buttonCurrentMonth.addEventListener("click", currentMonthClickHandler);
+
+    var buttonNextMonth = document.querySelector(".sv-datepicker__next-month");
+    buttonNextMonth.addEventListener("click", nextMonthClickHandler);
+
+    var buttonChooseMonthDay = document.querySelector(".sv-datepicker__days-block");
+    buttonChooseMonthDay.addEventListener("click", chooseMonthDayHandler);
+/*     buttonChooseMonthDay.addEventListener("",);
+    buttonChooseMonthDay.addEventListener("",); */
 }

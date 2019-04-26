@@ -116,7 +116,7 @@ DatepickerRenderer.prototype.DrawDays = function (firstDayOnWeek, daysCount, tod
         day.innerHTML = i;
 
         if (i === todayDay) {
-            day.className += " sv-datepicker__day_today";
+            day.classList.add("sv-datepicker__day_today");
         }
 
         week.appendChild(day);   
