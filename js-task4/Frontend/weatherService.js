@@ -1,4 +1,4 @@
-function WeatherFormatter() {
+function WeatherService() {
 
 }
 

@@ -2,7 +2,7 @@ var calendar = new Calendar();
 
 var view = new DatepickerRenderer();
 
-var weather = new WeatherFormatter();
+var weather = new WeatherService();
 
 var weatherView = new WeatherRenderer();
 
