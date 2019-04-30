@@ -1,5 +1,5 @@
-const express = require('./node_modules/express');
-const request = require('./node_modules/request');
+const express = require('express');
+const request = require('request');
 const app = express();
 const port = 3000;
 
