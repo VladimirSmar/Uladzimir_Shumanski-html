@@ -11,11 +11,11 @@ WeatherFormatter.prototype.getWeatherData = function(weatherDate, callback) {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
             var response = JSON.parse(xhr.response);
-            console.log(response);
 
             if(callback) {
                 callback(response);
             }
+            
             } else {
             console.error(xhr.responseText);
             }

@@ -1,12 +1,12 @@
-const express = require('express');
-const request = require('request');
+const express = require('./node_modules/express');
+const request = require('./node_modules/request');
 const app = express();
 const port = 3000;
 
-app.use(express.static('../Frontend'));
+app.use(express.static('../frontend'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Frontend/index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 app.get("/api/weatherApi", function (req, res) {
