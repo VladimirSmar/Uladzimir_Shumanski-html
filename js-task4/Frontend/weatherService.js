@@ -2,7 +2,7 @@ function WeatherService() {
 
 }
 
-WeatherFormatter.prototype.getWeatherData = function(weatherDate, callback) {
+WeatherService.prototype.getWeatherData = function(weatherDate, callback) {
     var xhr = new XMLHttpRequest();
     var url = "api/weatherApi?choosedDate=" + weatherDate;
     xhr.open("GET", url, true);
