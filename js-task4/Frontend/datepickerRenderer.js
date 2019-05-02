@@ -59,13 +59,15 @@ DatepickerRenderer.prototype.createBody = function () {
 
 }
 
-DatepickerRenderer.prototype.drawMonth = function (headerText) {
+DatepickerRenderer.prototype.drawMonth = function (calendar) {
+    var headerText = calendar.getMonthName();
     var monthInfo = document.querySelector(".-sv-datepicker__current-month");
     monthInfo.innerText = headerText;
 }
 
 DatepickerRenderer.prototype.drawPreviousMonthDays = function(previousMonthDaysCount, parentElement, previousMonthTotalDaysCount) {
     while(previousMonthDaysCount > 0) {
+
         var previousMonthDay = document.createElement("div");
         previousMonthDay.setAttribute("class", "-sv-datepicker__day -sv-datepicker__other-month-day");
         previousMonthDay.innerHTML = previousMonthTotalDaysCount - previousMonthDaysCount + 1;
@@ -88,7 +90,12 @@ DatepickerRenderer.prototype.drawNextMonthDays = function(nextMonthDaysCount, pa
     }
 }
 
-DatepickerRenderer.prototype.drawDays = function (firstDayOnWeek, daysCount, todayDay, previousMonthTotalDaysCount) {
+DatepickerRenderer.prototype.drawDays = function (calendar) {
+
+    var firstDayOnWeek = calendar.getFirstDayInfo();
+    var daysCount = calendar.getDaysInMonthCount();
+    var todayDay = calendar.isToday();
+    var previousMonthTotalDaysCount = calendar.getDaysInPreviousMonthCount();
 
     var daysBlock = document.querySelector(".-sv-datepicker__days-block");
     

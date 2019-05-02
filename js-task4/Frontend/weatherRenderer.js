@@ -9,6 +9,7 @@ WeatherRenderer.prototype.createWeatherBody = function(clientClickX, clientClick
     container.style.position = "absolute";
     container.style.top = clientClickY + 10 + "px";
     container.style.left = clientClickX + 10 + "px";
+    container.style.width = "325px";
     container.style.border = "3px black solid";
     container.style.backgroundImage = "url('src/flower.jpg')";
     container.style.backgroundPosition = "center";
@@ -69,16 +70,20 @@ WeatherRenderer.prototype.createWeatherBody = function(clientClickX, clientClick
 
 WeatherRenderer.prototype.insertWeatherData = function(obj) {
 
-    var summary = document.querySelector(".-sv-weather-ui__summary");
-    summary.innerText = obj.daily.data[0].summary;
+    if(obj == undefined) {
+        var summary = document.querySelector(".-sv-weather-ui__summary");
+        summary.innerText = "Service is unavailable at the moment";
+    } else {
+        var summary = document.querySelector(".-sv-weather-ui__summary");
+        summary.innerText = obj.daily.data[0].summary;
 
-    var maxTemperature = document.querySelector(".-sv-weather-ui__max-temperature");
-    maxTemperature.innerText = "Highest temperature (°C): " + obj.daily.data[0].temperatureMax;
+        var maxTemperature = document.querySelector(".-sv-weather-ui__max-temperature");
+        maxTemperature.innerText = "Highest temperature (°C): " + obj.daily.data[0].temperatureMax;
 
-    var minTemperature = document.querySelector(".-sv-weather-ui__min-temperature");
-    minTemperature.innerText = "Lowest temperature (°C): " + obj.daily.data[0].temperatureMin;
+        var minTemperature = document.querySelector(".-sv-weather-ui__min-temperature");
+        minTemperature.innerText = "Lowest temperature (°C): " + obj.daily.data[0].temperatureMin;
 
-    var windSpeed = document.querySelector(".-sv-weather-ui__wind-speed");
-    windSpeed.innerText = "Wind speed (kts): " + obj.daily.data[0].windSpeed;
-
+        var windSpeed = document.querySelector(".-sv-weather-ui__wind-speed");
+        windSpeed.innerText = "Wind speed (kts): " + obj.daily.data[0].windSpeed;          
+    }
 }

@@ -4,7 +4,7 @@ function WeatherService() {
 
 WeatherService.prototype.getWeatherData = function(weatherDate, callback) {
     var xhr = new XMLHttpRequest();
-    var url = "api/weatherApi?choosedDate=" + weatherDate;
+    var url = "api/weather?choosedDate=" + weatherDate;
     xhr.open("GET", url, true);
     xhr.send();
     xhr.onload = function (e) {
@@ -18,6 +18,7 @@ WeatherService.prototype.getWeatherData = function(weatherDate, callback) {
             
             } else {
             console.error(xhr.responseText);
+            callback();
             }
         }
     };
