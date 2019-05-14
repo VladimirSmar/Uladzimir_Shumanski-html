@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "system",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "index.js",
+        "sourceMap": true,
+        "watch": true
+    },
+    "files": [
+        "./ts/calendar.ts",
+        "./ts/calendarRenderer.ts",
+        "./ts/datepickerRenderer.ts",
+        "./ts/handlers.ts",
+        "./ts/weatherService.ts",
+        "./ts/weatherRenderer.ts",
+        "./ts/datepicker.ts"
+    ]
+}
