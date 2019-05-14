@@ -113,7 +113,7 @@ DatepickerRenderer.prototype.drawNextMonthDays = function (nextMonthDaysCount, p
     while (nextMonthDaysCount > 0) {
         let nextMonthDay = document.createElement("div");
         nextMonthDay.setAttribute("class", "-sv-datepicker__day -sv-datepicker__other-month-day");
-        nextMonthDay.innerHTML = nextMonthDayDate;
+        nextMonthDay.innerHTML = nextMonthDayDate + "";
         parentElement.appendChild(nextMonthDay);
         nextMonthDayDate++;
         nextMonthDaysCount--;

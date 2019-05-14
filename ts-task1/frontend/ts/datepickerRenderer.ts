@@ -65,7 +65,7 @@ DatepickerRenderer.prototype.drawMonth = function (calendar): void {
     monthInfo.innerText = headerText;
 }
 
-DatepickerRenderer.prototype.drawPreviousMonthDays = function(previousMonthDaysCount, parentElement, previousMonthTotalDaysCount): void {
+DatepickerRenderer.prototype.drawPreviousMonthDays = function(previousMonthDaysCount: number, parentElement: HTMLDivElement, previousMonthTotalDaysCount: number): void {
     while(previousMonthDaysCount > 0) {
 
         let previousMonthDay: HTMLDivElement = document.createElement("div");
@@ -78,11 +78,11 @@ DatepickerRenderer.prototype.drawPreviousMonthDays = function(previousMonthDaysC
     }
 }
 
-DatepickerRenderer.prototype.drawNextMonthDays = function(nextMonthDaysCount, parentElement, nextMonthDayDate): void {
+DatepickerRenderer.prototype.drawNextMonthDays = function(nextMonthDaysCount: number, parentElement: HTMLDivElement, nextMonthDayDate: number): void {
     while(nextMonthDaysCount > 0) {
         let nextMonthDay: HTMLDivElement = document.createElement("div");
         nextMonthDay.setAttribute("class", "-sv-datepicker__day -sv-datepicker__other-month-day");
-        nextMonthDay.innerHTML = nextMonthDayDate;
+        nextMonthDay.innerHTML = nextMonthDayDate + "";
         parentElement.appendChild(nextMonthDay);
 
         nextMonthDayDate++;

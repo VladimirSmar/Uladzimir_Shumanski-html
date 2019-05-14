@@ -2,7 +2,7 @@ function WeatherRenderer(): void {
 
 }
 
-WeatherRenderer.prototype.createWeatherBody = function(clientClickX, clientClickY, monthName, choosedDay): void {
+WeatherRenderer.prototype.createWeatherBody = function(clientClickX: number, clientClickY: number, monthName: string, choosedDay: string): void {
 
     let container: HTMLDivElement = document.createElement("div");
     container.setAttribute("class", "-sv-weather-ui");

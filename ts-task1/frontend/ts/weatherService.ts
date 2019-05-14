@@ -2,7 +2,7 @@ function WeatherService(): void {
 
 }
 
-WeatherService.prototype.getWeatherData = function(weatherDate, callback): void {
+WeatherService.prototype.getWeatherData = function(weatherDate: string, callback): void {
     let xhr: XMLHttpRequest = new XMLHttpRequest();
     let url: string = "api/weather?choosedDate=" + weatherDate;
     xhr.open("GET", url, true);
