@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es2015",
         "module": "system",
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
         "outFile": "index.js",

@@ -1,18 +1,19 @@
-function CalendarRenderer(): void {
+class CalendarRenderer{
 
-}
+    constructor() {}
 
-CalendarRenderer.prototype._createCalendar = function(calendar, view): void {
-    let handlers: any = new Handlers();
-
-    view.createBody();
-    view.drawMonth(calendar);
-    view.drawDays(calendar);
+    _createCalendar = function(calendar: Calendar, view: DatepickerRenderer): void {
+        let handlers: Handlers = new Handlers();
     
-    handlers.setHandlers(calendar, view, this);
-}
-
-CalendarRenderer.prototype._updateCalendar = function(calendar, view): void {
-    view.drawMonth(calendar);
-    view.drawDays(calendar);
+        view.createBody();
+        view.drawMonth(calendar);
+        view.drawDays(calendar);
+        
+        handlers.setHandlers(calendar, view, this);
+    }
+    
+    _updateCalendar = function(calendar: Calendar, view: DatepickerRenderer): void {
+        view.drawMonth(calendar);
+        view.drawDays(calendar);
+    }
 }

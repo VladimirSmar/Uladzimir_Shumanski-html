@@ -1,5 +1,5 @@
-let calendar: any = new Calendar();
-let view: any = new DatepickerRenderer();
-let calendarRenderer: any = new CalendarRenderer();
+let calendar: Calendar = new Calendar();
+let view: DatepickerRenderer = new DatepickerRenderer();
+let calendarRenderer: CalendarRenderer = new CalendarRenderer();
 
 calendarRenderer._createCalendar(calendar, view);
