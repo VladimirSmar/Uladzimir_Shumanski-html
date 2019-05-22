@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "system",
+        "moduleResolution": "node",
+        "outFile": "index.js",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [ "es2015", "dom" ],
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "watch": true,
+        "typeRoots": [
+          "node_modules/@types/"
+        ]
+    },
+    "files": [
+        "./src/ts/calendar.ts",
+        "./src/ts/calendarRenderer.ts",
+        "./src/ts/datepickerRenderer.ts",
+        "./src/ts/handlers.ts",
+        "./src/ts/weatherService.ts",
+        "./src/ts/weatherRenderer.ts",
+        "./src/ts/datepicker.ts"
+    ]
+}
