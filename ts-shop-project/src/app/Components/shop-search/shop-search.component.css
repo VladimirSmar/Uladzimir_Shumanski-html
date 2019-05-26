@@ -1,0 +1,43 @@
+.-sv-shop-search_content {
+    margin-right: 50px;
+  }
+
+.-sv-shop-search__result-item {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    width: 192px;
+    height: 16px;
+    padding: 5px;
+    background-color: white;
+    cursor: pointer;
+    list-style-type: none;
+  }
+  
+.-sv-shop-search__result-item:hover {
+    background-color: #607D8B;
+  }
+  
+.-sv-shop-search__item {
+    color: #888;
+    display: block;
+    text-decoration: none;
+  }
+  
+.-sv-shop-search__item:hover {
+    color: white;
+  }
+
+.-sv-shop-search__item:active {
+    color: white;
+  }
+
+.-sv-shop-search__input {
+    width: 200px;
+    height: 20px;
+  }
+  
+.-sv-shop-search__result {
+    margin-top: 0;
+    padding-left: 0;
+  }

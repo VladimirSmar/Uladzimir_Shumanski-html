@@ -1,0 +1,15 @@
+<div class="-sv-shop-search">
+  <div class="-sv-shop-search_content">
+    <div class="-sv-shop-search__title">Search for specific item</div>
+
+    <input #searchBox class="-sv-shop-search__input" (input)="search(searchBox.value)" />
+
+    <ul class="-sv-shop-search__result">
+      <li class="-sv-shop-search__result-item" *ngFor="let item of itemList$ | async">
+        <a class="-sv-shop-search__item" routerLink="/detail/{{item.id}}">
+          {{item.title}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

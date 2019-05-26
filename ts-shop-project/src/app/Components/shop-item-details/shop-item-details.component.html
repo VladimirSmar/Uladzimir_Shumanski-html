@@ -1,0 +1,21 @@
+<div class="shop-item-details">
+  <div class="shop-item-details_content" *ngIf="item">
+
+    <div class="shop-item-details__title">Edit product</div>
+    <div class="shop-item-details__id">id: {{item.id}}</div>
+    <div class="shop-item-details__container">
+      <label class="shop-item-details__label">title:
+        <input class="shop-item-details__input" [(ngModel)]="item.title" placeholder="Title" />
+      </label>
+    </div>
+    <div class="shop-item-details__container">
+      <label class="shop-item-details__label">price:
+        <input class="shop-item-details__input" [(ngModel)]="item.price" placeholder="Price" />
+      </label>
+    </div>
+
+    <button class="shop-item-details__button" (click)="goBack()">Go back</button>
+    <button class="shop-item-details__button" (click)="save()">Save</button>
+
+  </div>
+</div>
