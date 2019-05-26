@@ -1,0 +1,36 @@
+<div class="-sv-shop">
+  <div class="-sv-shop-container">
+    <app-shop-search></app-shop-search>
+
+    <div class="-sv-shop__item-list-container">
+
+      <div class="-sv-shop__new-item">
+        <label class="-sv-shop__new-item-title">Title:
+          <input #itemTitle class="-sv-shop__new-item-input" value={{defaultItem.title}} placeholder="Title" />
+        </label>
+        <label class="-sv-shop__new-item-price">Price:
+          <input #itemPrice class="-sv-shop__new-item-input" value={{defaultItem.price}} placeholder="Price" />
+        </label>
+        <button class="-sv-shop__button" (click)="add(itemTitle.value, +itemPrice.value); itemTitle.value=defaultItem.title; itemPrice.value=defaultItem.price">
+          Add
+        </button>
+      </div>
+
+      <ul class="-sv-shop__item-list">
+        <li class="-sv-shop__item">
+          <span class="-sv-shop__item_badge -sv-shop__item-list_header" (click)="sortItemList('id')">ID</span>
+          <span class="-sv-shop__item_title -sv-shop__item-list_header" (click)="sortItemList('title')">TITLE</span>
+          <span class="-sv-shop__item_price -sv-shop__item-list_header" (click)="sortItemList('price')">PRICE</span>
+        </li>
+        <li class="-sv-shop__item" *ngFor="let item of itemList">
+          <a class="-sv-shop__item-details" routerLink="/detail/{{item.id}}">
+            <span class="-sv-shop__item_badge">{{item.id}}</span>
+            <span class="-sv-shop__item_title">{{item.title}}</span>
+            <span class="-sv-shop__item_price">{{item.price}}</span>
+          </a>
+          <button class="-sv-shop__button -sv-shop__delete-item" title="delete shop item" (click)="delete(item)">x</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
