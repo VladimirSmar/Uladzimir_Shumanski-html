@@ -50,7 +50,6 @@ export class SignupComponent implements OnInit, OnDestroy {
     if (this.signupForm.valid) {
       const { firstName, lastName, email, password } = this.signupForm.value;
 
-      //TODO call the auth service
       this.subscriptions.push(
         this.auth.signup(firstName, lastName, email, password).subscribe(success => {
           if(success) {

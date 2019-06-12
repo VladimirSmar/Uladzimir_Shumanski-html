@@ -60,7 +60,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.loadingService.isLoading.next(true);
       const { email, password } = this.loginForm.value;
 
-      //TODO call the auth service
       this.subscriptions.push(
         this.auth.login(email, password).subscribe(success => {
           if (success) {

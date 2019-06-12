@@ -8,11 +8,18 @@ import { ChatroomService } from './../../../../services/chatroom.service';
 })
 export class ChatroomListComponent implements OnInit {
 
+  private chatroomTitle: string;
+
   constructor(
-    public chatroomService: ChatroomService
+    public chatroomService: ChatroomService,
   ) { }
 
   ngOnInit() {
+  }
+
+  addChatroom(): void {
+    this.chatroomTitle = prompt("Enter chatroom title: ", "New Chatroom");
+      this.chatroomService.addChatroom(this.chatroomTitle);
   }
 
 }
