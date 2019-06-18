@@ -1,47 +1,60 @@
-<app-navbar></app-navbar>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6" *ngIf="currentUser else noPhoto">
-      <img *ngIf="!downloadUrl" [src]="currentUser.photoUrl" alt="profile-pic"
-        class="rounded-circle mx-auto d-block profile-pic">
-      <img *ngIf="downloadUrl && downloadUrl.length > 0" [src]="downloadUrl" alt="profile-pic"
-        class="rounded-circle mx-auto d-block profile-pic">
+<app-navbar class="-sv-chatapp__navbar-container"></app-navbar>
+
+<div class="-sv-chatapp__edit-profile-container">
+  <div class="-sv-chatapp__edit-profile">
+    <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
+      <div class="-sv-chatapp__edit-profile_edit-content" *ngIf="currentUser else noPhoto">
+        <img *ngIf="!downloadUrl" [src]="currentUser.photoUrl" alt="profile-pic"
+          class="-sv-chatapp__edit-profile_photo">
+        <img *ngIf="downloadUrl && downloadUrl.length > 0" [src]="downloadUrl" alt="profile-pic"
+          class="-sv-chatapp__edit-profile_photo">
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6" *ngIf="currentUser">
-      <input type="file" (change)="uploadFile($event)">
+    <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
+      <div class="-sv-chatapp__edit-profile_edit-content" *ngIf="currentUser">
+        <input type="file" (change)="uploadFile($event)" placeholder="Photo"
+          class="-sv-chatapp__edit-profile_edit-field">
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 justify-content-center d-flex" *ngIf="currentUser">
-      <input type="text" [(ngModel)]="currentUser.firstName">
+    <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
+      <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-name-container"
+        *ngIf="currentUser">
+        <input type="text" [(ngModel)]="currentUser.firstName" placeholder="First Name"
+          class="-sv-chatapp__edit-profile_edit-field">
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 justify-content-center d-flex" *ngIf="currentUser">
-      <input type="text" [(ngModel)]="currentUser.lastName">
+    <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
+      <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-name-container"
+        *ngIf="currentUser">
+        <input type="text" [(ngModel)]="currentUser.lastName" placeholder="Last Name"
+          class="-sv-chatapp__edit-profile_edit-field">
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 quote" *ngIf="currentUser">
-      <input type="text" [(ngModel)]="currentUser.quote">
+    <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
+      <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-quote-container"
+        *ngIf="currentUser">
+        <input type="text" [(ngModel)]="currentUser.quote" placeholder="Quote"
+          class="-sv-chatapp__edit-profile_edit-field">
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 text-center bio" *ngIf="currentUser">
-      <textarea rows="5" [(ngModel)]="currentUser.bio"></textarea>
+    <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
+      <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-bio-container"
+        *ngIf="currentUser">
+        <textarea rows="5" [(ngModel)]="currentUser.bio" placeholder="Biography" class="-sv-chatapp__edit-profile_edit-field"></textarea>
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 text-center" *ngIf="currentUser">
-      <button class="btn btn-primary" (click)="save()">Save Profile</button>
+    <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
+      <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_submit-button-container"
+        *ngIf="currentUser">
+        <button class="-sv-chatapp__edit-profile_submit-button" (click)="save()">Save Profile</button>
+      </div>
     </div>
   </div>
 </div>
 
 <ng-template #noPhoto>
-  <div class="no-photo d-flex justify-content-center align-items-center">
+  <div
+    class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_no-photo-container">
     No Photo
   </div>
 </ng-template>

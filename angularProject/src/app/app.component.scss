@@ -1,12 +1,23 @@
 @import '../styles/variables';
 
-.alert-wrapper {
-    position: relative;
+.-sv-chatapp_container {
+    color: $secondary;
+}
 
-    alert {
-        position: absolute;
-        top: $navbar-height;
-        width: 100%;
-        z-index: 100;
+.-sv-chatapp__alert-wrapper {
+    position: relative;
+}
+
+.-sv-chatapp__alert {
+    position: absolute;
+    top: 138px;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    .-sv-chatapp__alert {
+        top: 58px;
     }
 }

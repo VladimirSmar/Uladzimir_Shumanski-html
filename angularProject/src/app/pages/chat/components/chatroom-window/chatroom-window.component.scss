@@ -1,19 +1,32 @@
 @import '../../../../../styles/variables';
 
-.message-wrapper {
-    overflow-y: scroll;
+.-sv-chatapp__chat_chatroom-window {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.select-room {
-    .select-room-message {
-        width: 30%;
-        height: 7%;
-        margin-bottom: 10%;
-        border: 1px solid $light-grey;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.2em;
-        box-shadow: 0 5px 10px $light-grey;
-    }
+.-sv-chatapp__chat_initial-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.-sv-chatapp__chat_message-wrapper {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.-sv-chatapp__chat_initial-message {
+    width: 30%;
+    height: 7%;
+    margin-bottom: 10%;
+    border: 1px solid $light-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    box-shadow: 0 5px 10px $light-grey;
 }

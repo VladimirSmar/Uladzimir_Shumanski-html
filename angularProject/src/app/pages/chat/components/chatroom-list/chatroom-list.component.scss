@@ -1,11 +1,63 @@
 @import "../../../../../styles/variables";
 
-.chatroom-list {
+.-sv-chatapp__chat_chatroom-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     border-right: 2px solid $light-grey;
-    overflow-y: scroll;
+    overflow-y: auto;
+}
 
-    .chatroom-list-item {
-        border-bottom: 1px solid $light-grey;
-        padding: 1em;
+.-sv-chatapp__chat_chatroom-list-item {
+    border-bottom: 1px solid $light-grey;
+    padding: 1em;
+}
+
+.-sv-chatapp__chat_add-chat-button {
+    display: inline-block;
+    width: 100%;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #328CC1;
+    border: 1px solid #328CC1;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: rgb(41, 122, 168);
+        border-color: rgb(41, 122, 168);
+    }
+
+    &:focus {
+        outline: 0;
+        color: #fff;
+        background-color: #328CC1;
+        border-color: #328CC1;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .-sv-chatapp__chat_add-chat-button {
+        transition: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .-sv-chatapp__chat_chatroom-list-item {
+        padding-left: 0.2em;
+        padding-right: 0.2em;
     }
 }

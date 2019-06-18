@@ -1,0 +1,29 @@
+.-sv-chatapp__chat {
+    display: flex;
+    height: calc(100vh - 140px);
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.-sv-chatapp__chat_chatroom-list-container {
+    width: 25%;
+}
+
+.-sv-chatapp__chat_chatroom-window-container {
+    width: 75%;
+}
+
+@media (min-width: 575.98px) {
+    .-sv-chatapp__chat {
+        height: calc(100vh - 70px);
+    }
+}
+
+@media (max-width: 576px) {
+    .-sv-chatapp__chat {
+        padding: 0;
+    }
+}

@@ -1,38 +1,41 @@
-<app-navbar></app-navbar>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6" *ngIf="user else noPhoto">
-      <img [src]="user?.photoUrl" alt="profile-pic" class="rounded-circle mx-auto d-block profile-pic">
+<app-navbar class="-sv-chatapp__navbar-container"></app-navbar>
+
+<div class="-sv-chatapp__profile-container">
+<div class="-sv-chatapp__profile">
+  <div class="-sv-chatapp__profile_content">
+    <div class="-sv-chatapp__profile_content-wrapper" *ngIf="user else noPhoto">
+      <img [src]="user?.photoUrl" alt="profile-pic" class="-sv-chatapp__profile_photo">
     </div>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 text-center name">
+  <div class="-sv-chatapp__profile_content">
+    <div class="-sv-chatapp__profile_content-wrapper -sv-chatapp__profile_name-container">
       {{user?.firstName}} {{user?.lastName}}
     </div>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 text-center quote">
-      <blockquote class="blockquote">
-        <p class="mb-0">
+  <div class="-sv-chatapp__profile_content">
+    <div class="-sv-chatapp__profile_content-wrapper -sv-chatapp__profile_quote-container">
+      <blockquote class="-sv-chatapp__profile_quote-wrapper">
+        <p class="-sv-chatapp__profile_quote">
           "{{user?.quote}}"
         </p>
       </blockquote>
     </div>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-md-6 text-center bio">
+  <div class="-sv-chatapp__profile_content">
+    <div class="-sv-chatapp__profile_content-wrapper -sv-chatapp__profile_bio-container">
       {{user?.bio}}
     </div>
   </div>
-  <div class="row justify-content-center" *ngIf="user?.id === currentUser?.id">
-    <div class="col-xs-12 col-sm-8 col-md-6 text-center edit-button">
-      <button [routerLink]="'/profile/' + currentUser?.id + '/edit'" class="btn btn-primary">Edit Profile</button>
+  <div class="-sv-chatapp__profile_content" *ngIf="user?.id === currentUser?.id">
+    <div class="-sv-chatapp__profile_content-wrapper -sv-chatapp__profile_edit-button-container">
+      <button [routerLink]="'/profile/' + currentUser?.id + '/edit'" class="-sv-chatapp__profile_edit-button btn btn-primary">Edit Profile</button>
     </div>
   </div>
 </div>
+</div>
 
 <ng-template #noPhoto>
-  <div class="no-photo d-flex justify-content-center align-items-center">
+  <div class="-sv-chatapp__profile_content-wrapper -sv-chatapp__profile_no-photo-container">
     No Photo
   </div>
 </ng-template>

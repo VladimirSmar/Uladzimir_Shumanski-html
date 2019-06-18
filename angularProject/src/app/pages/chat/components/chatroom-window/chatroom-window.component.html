@@ -1,7 +1,7 @@
-<div class="h-100 d-flex flex-column chat-window">
+<div class="-sv-chatapp__chat_chatroom-window">
   <ng-container *ngIf="!chatroom else chatMessages">
-    <div class="select-room h-100 w-100 d-flex justify-content-center align-items-center">
-      <div class="select-room-message">
+    <div class="-sv-chatapp__chat_initial-message-container">
+      <div class="-sv-chatapp__chat_initial-message">
         Select a Room
       </div>
     </div>
@@ -9,20 +9,20 @@
 </div>
 
 <ng-template #chatMessages>
-  <app-chatroom-title-bar [title]="chatroom.name"></app-chatroom-title-bar>
-  <div class="message-wrapper h-100" #scrollContainer>
+  <app-chatroom-title-bar [title]="chatroom.name" class="-sv-chatapp__chat_chatroom-title-container"></app-chatroom-title-bar>
+  <div class="-sv-chatapp__chat_message-wrapper" #scrollContainer>
     <ng-container *ngIf="messages?.length > 0 else noMessages">
       <ng-container *ngFor="let message of messages">
-        <app-chat-message [message]="message"></app-chat-message>
+        <app-chat-message [message]="message" class="-sv-chatapp__chat_message-container"></app-chat-message>
       </ng-container>
     </ng-container>
   </div>
-  <app-chat-input></app-chat-input>
+  <app-chat-input class="-sv-chatapp__chat_input-container"></app-chat-input>
 </ng-template>
 
 <ng-template #noMessages>
-  <div class="select-room h-100 w-100 d-flex justify-content-center align-items-center">
-    <div class="select-room-message">
+  <div class="-sv-chatapp__chat_initial-message-container">
+    <div class="-sv-chatapp__chat_initial-message">
       No Messages
     </div>
   </div>

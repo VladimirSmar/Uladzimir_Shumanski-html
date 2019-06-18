@@ -1,6 +1,107 @@
 @import './../../../styles/variables';
 
-.no-photo {
+.-sv-chatapp__profile {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.-sv-chatapp__profile_content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.-sv-chatapp__profile_content-wrapper {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+}
+
+.-sv-chatapp__profile_photo {
+    display: block;
+    border-radius: 50%;
+    max-width: 150px;
+    min-height: 150px;
+    margin: 1em auto;
+}
+
+.-sv-chatapp__profile_name-container {
+    font-size: 1.4em;
+    font-weight: 200;
+    text-align: center;
+}
+
+.-sv-chatapp__profile_quote-container {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.-sv-chatapp__profile_quote-wrapper {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+}
+
+.-sv-chatapp__profile_quote {
+    margin-bottom: 0;
+}
+
+.-sv-chatapp__profile_bio-container {
+    margin-bottom: 2em;
+    font-weight: 200;
+    text-align: center;
+}
+
+.-sv-chatapp__profile_edit-button-container {
+    text-align: center;
+}
+
+.-sv-chatapp__profile_edit-button {
+    display: inline-block;
+    width: 100%;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #328CC1;
+    border: 1px solid #328CC1;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: rgb(41, 122, 168);
+        border-color: rgb(41, 122, 168);
+    }
+
+    &:focus {
+        outline: 0;
+        color: #fff;
+        background-color: #328CC1;
+        border-color: #328CC1;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
+}
+
+.-sv-chatapp__profile_no-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 150px;
     width: 150px;
     background: $grey;
@@ -9,22 +110,46 @@
     border-radius: 50%;
 }
 
-.profile-pic {
-    max-width: 150px;
-    min-height: 150px;
-    margin: 1em 0;
+@media (prefers-reduced-motion: reduce) {
+    .-sv-chatapp__profile_edit-button {
+        transition: none;
+    }
 }
 
-.name {
-    font-size: 1.4em;
-    font-weight: 200;
-}
+@media (min-width: 576px) {
+    .-sv-chatapp__profile {
+      max-width: 540px;
+    }
+    
+    .-sv-chatapp__profile_content-wrapper {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
 
-.quote {
-    margin-bottom: 2em;
+    .-sv-chatapp__profile_edit-button {
+        transition: none;
+    }
 }
-
-.bio {
-    margin-bottom: 2em;
-    font-weight: 200;
+  
+@media (min-width: 768px) {
+    .-sv-chatapp__profile {
+      max-width: 720px;
+    }
+        
+    .-sv-chatapp__profile_content-wrapper {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+  
+@media (min-width: 992px) {
+    .-sv-chatapp__profile {
+      max-width: 960px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .-sv-chatapp__profile {
+      max-width: 1140px;
+    }
 }

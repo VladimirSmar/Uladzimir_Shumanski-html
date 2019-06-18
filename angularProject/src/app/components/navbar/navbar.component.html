@@ -1,16 +1,17 @@
-<nav class="navbar navbar-expand-sm navbar-primary bg-primary">
-  <div class="container">
-    <span class="navbar-brand">ChatApp</span>
-    <div class="page-links">
-      <ul class="navbar-nav" *ngIf="currentUser else loggedOut">
-        <li class="nav-item">
-          <a [routerLink]="'/profile/' + currentUser.id" routerLinkActive="active" class="nav-link">Profile</a>
+<nav class="-sv-chatapp__navbar">
+  <div class="-sv-chatapp__navbar_content">
+    <span class="-sv-chatapp__navbar_title">ChatApp</span>
+    <div class="-sv-chatapp__navbar_page-links">
+      <ul class="-sv-chatapp__navbar_link-list" *ngIf="currentUser else loggedOut">
+        <li class="-sv-chatapp__navbar_list-item">
+          <a [routerLink]="'/profile/' + currentUser.id" routerLinkActive="active"
+            class="-sv-chatapp__navbar_link">Profile</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/chat" routerLinkActive="active" class="nav-link">Chat Rooms</a>
+        <li class="-sv-chatapp__navbar_list-item">
+          <a routerLink="/chat" routerLinkActive="active" class="-sv-chatapp__navbar_link">Chat Rooms</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="auth.logout()">Logout</a>
+        <li class="-sv-chatapp__navbar_list-item">
+          <a class="-sv-chatapp__navbar_link" (click)="auth.logout()">Logout</a>
         </li>
       </ul>
     </div>
@@ -18,12 +19,12 @@
 </nav>
 
 <ng-template #loggedOut>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+  <ul class="-sv-chatapp__navbar_link-list">
+    <li class="-sv-chatapp__navbar_list-item">
+      <a routerLink="/login" routerLinkActive="active" class="-sv-chatapp__navbar_link">Login</a>
     </li>
-    <li class="nav-item">
-      <a routerLink="/signup" routerLinkActive="active" class="nav-link">Sign Up</a>
+    <li class="-sv-chatapp__navbar_list-item">
+      <a routerLink="/signup" routerLinkActive="active" class="-sv-chatapp__navbar_link">Sign Up</a>
     </li>
   </ul>
 </ng-template>

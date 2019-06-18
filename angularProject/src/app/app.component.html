@@ -1,7 +1,11 @@
-<ngx-loading [show]="loading" [config]=""></ngx-loading>
-<div class="alert-wrapper">
-    <alert *ngFor="let alert of alerts" [type]="alert.type" dismissOnTimeout="5000" class="text-center">
-        {{ alert.text }}
-    </alert>
+<div class="-sv-chatapp">
+    <div class="-sv-chatapp_container">
+        <ngx-loading class="-sv-chatapp__loading-indicator" [show]="loading" [config]=""></ngx-loading>
+        <div class="-sv-chatapp__alert-wrapper">
+            <alert *ngFor="let alert of alerts" [type]="alert.type" dismissOnTimeout="5000" class="-sv-chatapp__alert">
+                {{ alert.text }}
+            </alert>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
 </div>
-<router-outlet></router-outlet>

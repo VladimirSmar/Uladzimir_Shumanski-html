@@ -1,28 +1,31 @@
-<app-navbar></app-navbar>
-<div class="container-wrapper container d-flex justify-content-center align-items-center">
-  <div class="form-wrapper text-center">
-    <h2 class="text-center">Sign Up</h2>
-    <form [formGroup]="signupForm" (submit)="submit()" novalidate>
-      <div class="name-wrapper d-flex">
-        <div class="form-group firstName">
-          <input type="text" class="form-control" id="first-name-input" placeholder="First Name"
-            formControlName="firstName" autocomplete="given-name" />
+<app-navbar class="-sv-chatapp__navbar-container"></app-navbar>
+
+<div class="-sv-chatapp__signup-container">
+  <div class="-sv-chatapp__signup">
+    <div class="-sv-chatapp__signup_form-wrapper">
+      <div class="-sv-chatapp__signup_title">Sign Up</div>
+      <form class="-sv-chatapp__signup_form" [formGroup]="signupForm" (submit)="submit()" novalidate>
+        <div class="-sv-chatapp__signup_name-wrapper">
+          <div class="-sv-chatapp__signup_form-group -sv-chatapp__signup_firstName">
+            <input type="text" class="-sv-chatapp__signup_form-control" id="first-name-input" placeholder="First Name"
+              formControlName="firstName" autocomplete="given-name" />
+          </div>
+          <div class="-sv-chatapp__signup_form-group -sv-chatapp__signup_lastName">
+            <input type="text" class="-sv-chatapp__signup_form-control" id="last-name-input" placeholder="Last Name"
+              formControlName="lastName" autocomplete="family-name" />
+          </div>
         </div>
-        <div class="form-group lastName">
-          <input type="text" class="form-control" id="last-name-input" placeholder="Last Name"
-            formControlName="lastName" autocomplete="family-name" />
+        <div class="-sv-chatapp__signup_form-group">
+          <input type="email" class="-sv-chatapp__signup_form-control" id="email-input" placeholder="Email" formControlName="email"
+            autocomplete="email" />
         </div>
-      </div>
-      <div class="form-group">
-        <input type="email" class="form-control" id="email-input" placeholder="Enter Email" formControlName="email"
-          autocomplete="email" />
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" id="password-input" placeholder="Password"
-          formControlName="password" autocomplete="current-password" />
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <small><a routerLink="/login">Already have an Account?</a></small>
+        <div class="-sv-chatapp__signup_form-group">
+          <input type="password" class="-sv-chatapp__signup_form-control" id="password-input" placeholder="Password"
+            formControlName="password" autocomplete="current-password" />
+        </div>
+        <button type="submit" class="-sv-chatapp__signup_submit-button">Submit</button>
+      </form>
+      <small><a routerLink="/login" class="-sv-chatapp__signup_router-link">Already have an Account?</a></small>
+    </div>
   </div>
 </div>
