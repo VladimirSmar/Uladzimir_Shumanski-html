@@ -1,10 +1,10 @@
 @import "../../../../../styles/variables";
 
-.-sv-chatapp__chat_input {
+.-sv-chatapp__chat_chatroom-input {
     display: flex;
 }
 
-.-sv-chatapp__chat_input-group {
+.-sv-chatapp__chat_chatroom-input-group {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +13,7 @@
     width: 100%;
 }
 
-.-sv-chatapp__chat_form-control {
+.-sv-chatapp__chat_chatroom-form-control {
     display: block;
     position: relative;
     flex: 1 1 auto;
@@ -65,11 +65,11 @@
     }
 }
 
-.-sv-chatapp__chat_input-group-append {
+.-sv-chatapp__chat_chatroom-input-group-append {
     margin-left: -1px;
 }
 
-.-sv-chatapp__chat_submit-button {
+.-sv-chatapp__chat_chatroom-submit-button {
     display: inline-block;
     width: 100%;
     font-weight: 400;
@@ -106,7 +106,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .-sv-chatapp__chat_submit-button {
+    .-sv-chatapp__chat_chatroom-submit-button {
         transition: none;
     }
 }

@@ -13,23 +13,25 @@ export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChec
 
   @ViewChild('scrollContainer') private scrollContainer: ElementRef;
 
-  private subscriptions: Subscription[] = [];
-  public chatroom: Observable<any>;
-  public messages: Observable<any>;
+  private _subscriptions: Subscription[] = [];
+  public chatroom: Observable<any> = undefined;
+  public messages: Observable<any> = undefined;
 
   constructor(
-    private route: ActivatedRoute,
-    private loadingService: LoadingService,
-    private chatroomService: ChatroomService
-  ) { 
-    this.subscriptions.push(
-      this.chatroomService.selectedChatroom.subscribe(chatroom => {
+    private _route: ActivatedRoute,
+    private _loadingService: LoadingService,
+    private _chatroomService: ChatroomService
+  ) {
+    this._loadingService.isLoading.next(true);
+
+    this._subscriptions.push(
+      this._chatroomService.selectedChatroom.subscribe(chatroom => {
         this.chatroom = chatroom;
       })
     )
     
-    this.subscriptions.push(
-      this.chatroomService.selectedChatroomMessages.subscribe(messages => {
+    this._subscriptions.push(
+      this._chatroomService.selectedChatroomMessages.subscribe(messages => {
         this.messages = messages;
       })
     )
@@ -37,16 +39,19 @@ export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChec
 
   ngOnInit() {
     this.scrollToBottom();
-    this.subscriptions.push(
-      this.route.paramMap.subscribe(params => {
+    this._subscriptions.push(
+      this._route.paramMap.subscribe(params => {
         const chatroomId = params.get('chatroomId');
-        this.chatroomService.changeChatroom.next(chatroomId);
+        this._chatroomService.changeChatroom.next(chatroomId);
+        setTimeout((() => {
+          this._loadingService.isLoading.next(false) }
+          ),0);
       })
     )
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(sub => sub.unsubscribe);
+    this._subscriptions.forEach(sub => sub.unsubscribe);
   }
 
   ngAfterViewChecked() {

@@ -1,9 +1,13 @@
 @import "../../../../../styles/variables";
 
+.-sv-chatapp__chat_chatroom-list-add-button {
+    border-right: 2px solid $light-grey;
+}
+
 .-sv-chatapp__chat_chatroom-list {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 70px);
     border-right: 2px solid $light-grey;
     overflow-y: auto;
 }
@@ -11,9 +15,13 @@
 .-sv-chatapp__chat_chatroom-list-item {
     border-bottom: 1px solid $light-grey;
     padding: 1em;
+
+    &:focus {
+        outline: 0;
+    }
 }
 
-.-sv-chatapp__chat_add-chat-button {
+.-sv-chatapp__chat_chatroom-add-chat-button {
     display: inline-block;
     width: 100%;
     font-weight: 400;
@@ -50,8 +58,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .-sv-chatapp__chat_add-chat-button {
+    .-sv-chatapp__chat_chatroom-add-chat-button {
         transition: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .-sv-chatapp__chat_chatroom-list {
+        height: calc(100% - 100px);
     }
 }
 

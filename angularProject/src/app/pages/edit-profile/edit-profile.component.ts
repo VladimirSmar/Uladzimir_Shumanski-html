@@ -21,33 +21,33 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
   public currentUser: any = null;
   public userId: string = '';
-  private subsubscriptions: Subscription[] = [];
+  private _subsubscriptions: Subscription[] = [];
   public uploadPercent: number = 0;
   public downloadUrl: string | null = null;
-  private downloadURL: Observable<string>;
+  private _downloadURL: Observable<string> = undefined;
 
   constructor(
-    private auth: AuthService,
-    private loadingService: LoadingService,
-    private route: ActivatedRoute,
-    private fs: AngularFireStorage,
-    private db: AngularFirestore,
-    private location: Location,
-    private alertService: AlertService
+    private _auth: AuthService,
+    private _loadingService: LoadingService,
+    private _route: ActivatedRoute,
+    private _fireStorage: AngularFireStorage,
+    private _database: AngularFirestore,
+    private _location: Location,
+    private _alertService: AlertService
   ) { 
-    this.loadingService.isLoading.next(true);
+    this._loadingService.isLoading.next(true);
   }
 
   ngOnInit() {
-    this.subsubscriptions.push(
-      this.auth.currentUser.subscribe(user => {
+    this._subsubscriptions.push(
+      this._auth.currentUser.subscribe(user => {
         this.currentUser = user;
-        this.loadingService.isLoading.next(false);
+        this._loadingService.isLoading.next(false);
       })
     );
 
-    this.subsubscriptions.push(
-      this.route.paramMap.subscribe(params => {
+    this._subsubscriptions.push(
+      this._route.paramMap.subscribe(params => {
         this.userId = params.get('userId');
       })
     )
@@ -56,27 +56,27 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   public uploadFile(event): void {
     const file = event.target.files[0];
     const filePath = `${file.name}_${this.currentUser.id}`;
-    const task = this.fs.upload(filePath, file);
-    const ref = this.fs.ref(filePath);
+    const task = this._fireStorage.upload(filePath, file);
+    const ref = this._fireStorage.ref(filePath);
 
     //observe the percentage changes
-    this.subsubscriptions.push(
+    this._subsubscriptions.push(
       task.percentageChanges().subscribe(percentage => {
         if(percentage < 100) {
-          this.loadingService.isLoading.next(true);
+          this._loadingService.isLoading.next(true);
         } else {
-          this.loadingService.isLoading.next(false);
+          this._loadingService.isLoading.next(false);
         }
         this.uploadPercent = percentage;
       })
     );
 
     //get notified when the download URL is available
-    this.subsubscriptions.push(
+    this._subsubscriptions.push(
       task.snapshotChanges().pipe(
         finalize(() => {
-          this.downloadURL = ref.getDownloadURL()
-          this.downloadURL.subscribe(url => this.downloadUrl = url)
+          this._downloadURL = ref.getDownloadURL()
+          this._downloadURL.subscribe(url => this.downloadUrl = url)
         })
       ).subscribe()
     );
@@ -92,14 +92,14 @@ export class EditProfileComponent implements OnInit, OnDestroy {
     }
 
     const user = Object.assign({}, this.currentUser, {photoUrl: photo});
-    const userRef: AngularFirestoreDocument<User> = this.db.doc(`users/${user.id}`);
+    const userRef: AngularFirestoreDocument<User> = this._database.doc(`users/${user.id}`);
     userRef.set(user);
-    this.alertService.alerts.next(new Alert('Your profile was successfully updated!', AlertType.Success));
-    this.location.back();
+    this._alertService.alerts.next(new Alert('Your profile was successfully updated!', AlertType.Success));
+    this._location.back();
   }
 
   ngOnDestroy() {
-    this.subsubscriptions.forEach(sub => sub.unsubscribe());
+    this._subsubscriptions.forEach(sub => sub.unsubscribe());
   }
 
 }

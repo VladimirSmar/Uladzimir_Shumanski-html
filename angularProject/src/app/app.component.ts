@@ -10,30 +10,29 @@ import { LoadingService } from './services/loading.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  public subscriptions: Subscription[] = [];
+  private _subscriptions: Subscription[] = [];
   public alerts: Array<Alert> = []
   public loading: boolean = false;
 
   constructor(
-    private alertService: AlertService,
-    private loadingService: LoadingService) { }
+    private _alertService: AlertService,
+    private _loadingService: LoadingService) { }
 
   ngOnInit() {
-
-    this.subscriptions.push(
-      this.alertService.alerts.subscribe(alert => {
+    this._subscriptions.push(
+      this._alertService.alerts.subscribe(alert => {
         this.alerts.push(alert);
       })
     )
 
-    this.subscriptions.push(
-      this.loadingService.isLoading.subscribe(isLoading => {
+    this._subscriptions.push(
+      this._loadingService.isLoading.subscribe(isLoading => {
         this.loading = isLoading;
       })
     )
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this._subscriptions.forEach(sub => sub.unsubscribe());
   }
 }

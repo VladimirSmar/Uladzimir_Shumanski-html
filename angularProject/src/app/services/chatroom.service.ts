@@ -13,21 +13,20 @@ import { AlertService } from './alert.service';
 })
 export class ChatroomService {
 
-  public chatrooms: Observable<any>;
+  public chatrooms: Observable<any> = undefined;
   public changeChatroom: BehaviorSubject<string | null> = new BehaviorSubject(null);
-  public selectedChatroom: Observable<any>;
-  public selectedChatroomMessages: Observable<any>;
+  public selectedChatroom: Observable<any> = undefined;
+  public selectedChatroomMessages: Observable<any> = undefined;
 
   constructor(
-    private db: AngularFirestore,
-    private loadingService: LoadingService,
-    private auth: AuthService,
-    private alertService: AlertService
+    private _database: AngularFirestore,
+    private _auth: AuthService,
+    private _alertService: AlertService
   ) {
     this.selectedChatroom = this.changeChatroom.pipe(
       switchMap(chatroomId => {
         if (chatroomId) {
-          return db.doc(`chatrooms/${chatroomId}`).valueChanges();
+          return _database.doc(`chatrooms/${chatroomId}`).valueChanges();
         }
         return of(null);
       })
@@ -36,7 +35,7 @@ export class ChatroomService {
     this.selectedChatroomMessages = this.changeChatroom.pipe(
       switchMap(chatroomId => {
         if (chatroomId) {
-          return db.collection(`chatrooms/${chatroomId}/messages`, ref => {
+          return _database.collection(`chatrooms/${chatroomId}/messages`, ref => {
             return ref.orderBy('createdAt', 'desc').limit(100);
           }).valueChanges().pipe(
             map(arr => arr.reverse())
@@ -46,7 +45,7 @@ export class ChatroomService {
       })
     );
 
-    this.chatrooms = db.collection('chatrooms').valueChanges();
+    this.chatrooms = _database.collection('chatrooms').valueChanges();
   }
 
   public createMessage(text: string): void {
@@ -55,19 +54,19 @@ export class ChatroomService {
       const message = {
         message: text,
         createdAt: new Date(),
-        sender: this.auth.currentUserSnapshot
+        sender: this._auth.currentUserSnapshot
       };
 
-      this.db.collection(`chatrooms/${chatroomId}/messages`).add(message);
+      this._database.collection(`chatrooms/${chatroomId}/messages`).add(message);
     } else {
       const invalidMessageAlert = new Alert('Your message were invalid, try again.', AlertType.Danger);
-      this.alertService.alerts.next(invalidMessageAlert);
+      this._alertService.alerts.next(invalidMessageAlert);
     }
   }
 
   public addChatroom(title: string): void {
     if (title) {
-      this.db.collection(`chatrooms`).add({}).then((success) => {
+      this._database.collection(`chatrooms`).add({}).then((success) => {
         success.set({
           id: success.id,
           name: title
@@ -75,7 +74,7 @@ export class ChatroomService {
       });
     } else {
       const failedAddChatroomAlert = new Alert('Chatroom title were invalid, try again.', AlertType.Danger);
-      this.alertService.alerts.next(failedAddChatroomAlert);
+      this._alertService.alerts.next(failedAddChatroomAlert);
     }
   }
 

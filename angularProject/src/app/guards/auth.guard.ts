@@ -13,9 +13,9 @@ import { AuthService } from './../services/auth.service';
 export class AuthGuard implements CanActivate {
 
   constructor(
-    private auth: AuthService,
-    private router: Router,
-    private alertService: AlertService
+    private _auth: AuthService,
+    private _router: Router,
+    private _alertService: AlertService
   ) {
 
   }
@@ -24,13 +24,13 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
 
-    return this.auth.currentUser.pipe(
+    return this._auth.currentUser.pipe(
       take(1),
       map((currentUser) => !!currentUser),
       tap((loggedIn) => {
         if (!loggedIn) {
-          this.alertService.alerts.next(new Alert('You must be logged in to access that page.', AlertType.Danger));
-          this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } })
+          this._alertService.alerts.next(new Alert('You must be logged in to access that page.', AlertType.Danger));
+          this._router.navigate(['/login'], { queryParams: { returnUrl: state.url } })
         }
       })
     )

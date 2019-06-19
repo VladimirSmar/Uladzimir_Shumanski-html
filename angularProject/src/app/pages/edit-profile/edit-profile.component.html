@@ -4,43 +4,44 @@
   <div class="-sv-chatapp__edit-profile">
     <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
       <div class="-sv-chatapp__edit-profile_edit-content" *ngIf="currentUser else noPhoto">
-        <img *ngIf="!downloadUrl" [src]="currentUser.photoUrl" alt="profile-pic"
-          class="-sv-chatapp__edit-profile_photo">
-        <img *ngIf="downloadUrl && downloadUrl.length > 0" [src]="downloadUrl" alt="profile-pic"
-          class="-sv-chatapp__edit-profile_photo">
+        <img class="-sv-chatapp__edit-profile_photo" *ngIf="!downloadUrl" [src]="currentUser.photoUrl"
+          alt="profile-pic">
+        <img class="-sv-chatapp__edit-profile_photo" *ngIf="downloadUrl && downloadUrl.length > 0" [src]="downloadUrl"
+          alt="profile-pic">
       </div>
     </div>
     <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
       <div class="-sv-chatapp__edit-profile_edit-content" *ngIf="currentUser">
-        <input type="file" (change)="uploadFile($event)" placeholder="Photo"
-          class="-sv-chatapp__edit-profile_edit-field">
+        <input class="-sv-chatapp__edit-profile_edit-field" type="file" (change)="uploadFile($event)"
+          placeholder="Photo">
       </div>
     </div>
     <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
       <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-name-container"
         *ngIf="currentUser">
-        <input type="text" [(ngModel)]="currentUser.firstName" placeholder="First Name"
-          class="-sv-chatapp__edit-profile_edit-field">
+        <input class="-sv-chatapp__edit-profile_edit-field" type="text" [(ngModel)]="currentUser.firstName"
+          placeholder="First Name">
       </div>
     </div>
     <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
       <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-name-container"
         *ngIf="currentUser">
-        <input type="text" [(ngModel)]="currentUser.lastName" placeholder="Last Name"
-          class="-sv-chatapp__edit-profile_edit-field">
+        <input class="-sv-chatapp__edit-profile_edit-field" type="text" [(ngModel)]="currentUser.lastName"
+          placeholder="Last Name">
       </div>
     </div>
     <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
       <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-quote-container"
         *ngIf="currentUser">
-        <input type="text" [(ngModel)]="currentUser.quote" placeholder="Quote"
-          class="-sv-chatapp__edit-profile_edit-field">
+        <input class="-sv-chatapp__edit-profile_edit-field" type="text" [(ngModel)]="currentUser.quote"
+          placeholder="Quote">
       </div>
     </div>
     <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
       <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_edit-bio-container"
         *ngIf="currentUser">
-        <textarea rows="5" [(ngModel)]="currentUser.bio" placeholder="Biography" class="-sv-chatapp__edit-profile_edit-field"></textarea>
+        <textarea class="-sv-chatapp__edit-profile_edit-field" rows="5" [(ngModel)]="currentUser.bio"
+          placeholder="Biography"></textarea>
       </div>
     </div>
     <div class="-sv-chatapp__edit-profile_edit-content-wrapper">
@@ -53,8 +54,7 @@
 </div>
 
 <ng-template #noPhoto>
-  <div
-    class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_no-photo-container">
+  <div class="-sv-chatapp__edit-profile_edit-content -sv-chatapp__edit-profile_no-photo-container">
     No Photo
   </div>
 </ng-template>

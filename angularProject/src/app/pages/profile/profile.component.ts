@@ -14,37 +14,37 @@ import { User } from './../../interfaces/user';
 export class ProfileComponent implements OnInit, OnDestroy {
 
   public currentUser: any = null;
-  public user: User;
-  private subscriptions: Subscription[] = [];
+  public user: User = undefined;
+  private _subscriptions: Subscription[] = [];
 
   constructor(
-    private auth: AuthService,
-    private loadingService: LoadingService,
-    private route: ActivatedRoute,
-    private db: AngularFirestore
+    private _auth: AuthService,
+    private _loadingService: LoadingService,
+    private _route: ActivatedRoute,
+    private _database: AngularFirestore
   ) {
-    this.loadingService.isLoading.next(true);
+    this._loadingService.isLoading.next(true);
   }
 
   ngOnInit() {
-    this.subscriptions.push(
-      this.auth.currentUser.subscribe( user => {
+    this._subscriptions.push(
+      this._auth.currentUser.subscribe( user => {
         this.currentUser = user;
-        this.loadingService.isLoading.next(false);
+        this._loadingService.isLoading.next(false);
       })
     );
 
-    this.subscriptions.push(
-      this.route.paramMap.subscribe(params => {
+    this._subscriptions.push(
+      this._route.paramMap.subscribe(params => {
         const userId = params.get('userId');
-        const userRef: AngularFirestoreDocument<User> = this.db.doc(`users/${userId}`);
+        const userRef: AngularFirestoreDocument<User> = this._database.doc(`users/${userId}`);
         userRef.valueChanges().subscribe(user => this.user = user);
       })
     );
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this._subscriptions.forEach(sub => sub.unsubscribe());
   }
 
 }

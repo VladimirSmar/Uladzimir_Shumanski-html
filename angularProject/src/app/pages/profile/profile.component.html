@@ -4,7 +4,7 @@
 <div class="-sv-chatapp__profile">
   <div class="-sv-chatapp__profile_content">
     <div class="-sv-chatapp__profile_content-wrapper" *ngIf="user else noPhoto">
-      <img [src]="user?.photoUrl" alt="profile-pic" class="-sv-chatapp__profile_photo">
+      <img class="-sv-chatapp__profile_photo" [src]="user?.photoUrl" alt="profile-pic">
     </div>
   </div>
   <div class="-sv-chatapp__profile_content">
@@ -28,7 +28,7 @@
   </div>
   <div class="-sv-chatapp__profile_content" *ngIf="user?.id === currentUser?.id">
     <div class="-sv-chatapp__profile_content-wrapper -sv-chatapp__profile_edit-button-container">
-      <button [routerLink]="'/profile/' + currentUser?.id + '/edit'" class="-sv-chatapp__profile_edit-button btn btn-primary">Edit Profile</button>
+      <button class="-sv-chatapp__profile_edit-button" [routerLink]="'/profile/' + currentUser?.id + '/edit'">Edit Profile</button>
     </div>
   </div>
 </div>

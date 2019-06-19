@@ -14,20 +14,20 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 })
 export class AuthService {
 
-  public currentUser: Observable<User | null>;
-  public currentUserSnapshot: User | null;
+  public currentUser: Observable<User | null> = undefined;
+  public currentUserSnapshot: User | null = undefined;
 
   constructor(
-    private router: Router,
-    private alertService: AlertService,
-    private afAuth: AngularFireAuth,
-    private db: AngularFirestore
+    private _router: Router,
+    private _alertService: AlertService,
+    private _angularFirebaseAuth: AngularFireAuth,
+    private _database: AngularFirestore
   ) {
 
-    this.currentUser = this.afAuth.authState.pipe(
+    this.currentUser = this._angularFirebaseAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
-          return this.db.doc<User>(`users/${user.uid}`).valueChanges();
+          return this._database.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -39,9 +39,9 @@ export class AuthService {
 
   public signup(firstName: string, lastName: string, email: string, password: string): Observable<boolean> {
     return from(
-      this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      this._angularFirebaseAuth.auth.createUserWithEmailAndPassword(email, password)
         .then((user) => {
-          const userRef: AngularFirestoreDocument<User> = this.db.doc(`users/${user.user.uid}`);
+          const userRef: AngularFirestoreDocument<User> = this._database.doc(`users/${user.user.uid}`);
           const updatedUser = {
             id: user.user.uid,
             email: user.user.email,
@@ -60,16 +60,16 @@ export class AuthService {
 
   public login(email: string, password: string): Observable<boolean> {
     return from(
-      this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      this._angularFirebaseAuth.auth.signInWithEmailAndPassword(email, password)
         .then((user) => true)
         .catch((err) => false)
     );
   }
 
   public logout(): void {
-    this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['/login']);
-      this.alertService.alerts.next(new Alert('You have been signed out.'));
+    this._angularFirebaseAuth.auth.signOut().then(() => {
+      this._router.navigate(['/login']);
+      this._alertService.alerts.next(new Alert('You have been signed out.', AlertType.Success));
     })
   }
 

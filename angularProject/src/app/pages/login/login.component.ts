@@ -16,39 +16,39 @@ import { AuthService } from './../../services/auth.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  public loginForm: FormGroup;
-  private subscriptions: Subscription[] = [];
-  private returnUrl: string;
+  public loginForm: FormGroup = undefined;
+  private _subscriptions: Subscription[] = [];
+  private _returnUrl: string = undefined;
 
   constructor(
-    private fb: FormBuilder,
-    private alertService: AlertService,
-    private loadingService: LoadingService,
-    private auth: AuthService,
-    private router: Router,
-    private route: ActivatedRoute
+    private _formBuilder: FormBuilder,
+    private _alertService: AlertService,
+    private _loadingService: LoadingService,
+    private _auth: AuthService,
+    private _router: Router,
+    private _route: ActivatedRoute
   ) {
     this.createForm();
   }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/chat';
+    this._returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/chat';
 
-    this.subscriptions.push(
-      this.auth.currentUser.subscribe(user => {
+    this._subscriptions.push(
+      this._auth.currentUser.subscribe(user => {
         if (!!user) {
-          this.router.navigateByUrl('/chat');
+          this._router.navigateByUrl('/chat');
         }
       })
     );
   }
 
   ngOnDestroy() {
-    this.subscriptions.forEach(sub => sub.unsubscribe);
+    this._subscriptions.forEach(sub => sub.unsubscribe);
   }
 
   private createForm(): void {
-    this.loginForm = this.fb.group({
+    this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
     })
@@ -57,29 +57,29 @@ export class LoginComponent implements OnInit, OnDestroy {
   public submit(): void {
 
     if (this.loginForm.valid) {
-      this.loadingService.isLoading.next(true);
+      this._loadingService.isLoading.next(true);
       const { email, password } = this.loginForm.value;
 
-      this.subscriptions.push(
-        this.auth.login(email, password).subscribe(success => {
+      this._subscriptions.push(
+        this._auth.login(email, password).subscribe(success => {
           if (success) {
-            this.router.navigateByUrl(this.returnUrl);
+            this._router.navigateByUrl(this._returnUrl);
           } else {
             this.displayFailedLogin();
           }
 
-          this.loadingService.isLoading.next(false);
+          this._loadingService.isLoading.next(false);
         })
       )
     } else {
-      this.loadingService.isLoading.next(false);
+      this._loadingService.isLoading.next(false);
       this.displayFailedLogin();
     }
   }
 
   private displayFailedLogin(): void {
     const failedLoginAlert = new Alert('Your Email or Password were invalid, try again.', AlertType.Danger);
-    this.alertService.alerts.next(failedLoginAlert);
+    this._alertService.alerts.next(failedLoginAlert);
   }
 
 }

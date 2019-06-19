@@ -6,16 +6,16 @@
       <div class="-sv-chatapp__login_title">Login</div>
       <form class="-sv-chatapp__login_form" [formGroup]="loginForm" (submit)="submit()" novalidate>
         <div class="-sv-chatapp__login_form-group">
-          <input type="email" class="-sv-chatapp__login_form-control" id="email-input" placeholder="Email" formControlName="email"
-            autocomplete="email" />
+          <input class="-sv-chatapp__login_form-control" type="email" id="email-input" placeholder="Email"
+            formControlName="email" autocomplete="email" />
         </div>
         <div class="-sv-chatapp__login_form-group">
-          <input type="password" class="-sv-chatapp__login_form-control" id="password-input" placeholder="Password"
+          <input class="-sv-chatapp__login_form-control" type="password" id="password-input" placeholder="Password"
             formControlName="password" autocomplete="current-password" />
         </div>
-        <button type="submit" class="-sv-chatapp__login_submit-button">Submit</button>
+        <button class="-sv-chatapp__login_submit-button" type="submit">Submit</button>
       </form>
-      <small><a routerLink="/signup" class="-sv-chatapp__login_router-link">Need an Account?</a></small>
+      <small><a class="-sv-chatapp__login_router-link" routerLink="/signup">Need an Account?</a></small>
     </div>
   </div>
 </div>

@@ -4,11 +4,11 @@
     <div class="-sv-chatapp__navbar_page-links">
       <ul class="-sv-chatapp__navbar_link-list" *ngIf="currentUser else loggedOut">
         <li class="-sv-chatapp__navbar_list-item">
-          <a [routerLink]="'/profile/' + currentUser.id" routerLinkActive="active"
-            class="-sv-chatapp__navbar_link">Profile</a>
+          <a class="-sv-chatapp__navbar_link" [routerLink]="'/profile/' + currentUser.id"
+            routerLinkActive="active">Profile</a>
         </li>
         <li class="-sv-chatapp__navbar_list-item">
-          <a routerLink="/chat" routerLinkActive="active" class="-sv-chatapp__navbar_link">Chat Rooms</a>
+          <a class="-sv-chatapp__navbar_link" routerLink="/chat" routerLinkActive="active">Chat Rooms</a>
         </li>
         <li class="-sv-chatapp__navbar_list-item">
           <a class="-sv-chatapp__navbar_link" (click)="auth.logout()">Logout</a>
@@ -21,10 +21,10 @@
 <ng-template #loggedOut>
   <ul class="-sv-chatapp__navbar_link-list">
     <li class="-sv-chatapp__navbar_list-item">
-      <a routerLink="/login" routerLinkActive="active" class="-sv-chatapp__navbar_link">Login</a>
+      <a class="-sv-chatapp__navbar_link" routerLink="/login" routerLinkActive="active">Login</a>
     </li>
     <li class="-sv-chatapp__navbar_list-item">
-      <a routerLink="/signup" routerLinkActive="active" class="-sv-chatapp__navbar_link">Sign Up</a>
+      <a class="-sv-chatapp__navbar_link" routerLink="/signup" routerLinkActive="active">Sign Up</a>
     </li>
   </ul>
 </ng-template>

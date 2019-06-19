@@ -13,22 +13,22 @@ import { AuthService } from './../services/auth.service';
 export class IsOwnerGuard implements CanActivate {
 
   constructor(
-    private auth: AuthService,
-    private router: Router,
-    private alertService: AlertService
+    private _auth: AuthService,
+    private _router: Router,
+    private _alertService: AlertService
   ) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    return this.auth.currentUser.pipe(
+    return this._auth.currentUser.pipe(
       take(1),
       map((currentUser) => !!currentUser && currentUser.id === next.params.userId),
       tap((isOwner) => {
         if (!isOwner) {
-          this.alertService.alerts.next(new Alert('You can only edit your profile.', AlertType.Danger));
-          this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+          this._alertService.alerts.next(new Alert('You can only edit your profile.', AlertType.Danger));
+          this._router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
         }
       })
     )

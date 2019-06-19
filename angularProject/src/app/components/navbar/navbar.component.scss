@@ -72,6 +72,16 @@
     }
 }
 
+@media (max-width: 280px) {
+    .-sv-chatapp__navbar_title {
+        margin: 0;
+    }
+
+    .-sv-chatapp__navbar_link {
+        margin: 0;
+    }
+}
+
 @media (max-width: 575.98px) {
     .-sv-chatapp__navbar_content {
       padding-right: 0;

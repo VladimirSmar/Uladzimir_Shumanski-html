@@ -1,10 +1,10 @@
+<div class="-sv-chatapp__chat_chatroom-list-add-button -sv-chatapp__chat_chatroom-list-item">
+  <button class="-sv-chatapp__chat_chatroom-add-chat-button" type="button" (click)="addChatroom()">Add Chat</button>
+</div>
 <div class="-sv-chatapp__chat_chatroom-list">
-  <div class="-sv-chatapp__chat_chatroom-list-item">
-    <button class="-sv-chatapp__chat_add-chat-button" type="button" (click)="addChatroom()">Add Chat</button>
-  </div>
   <ng-container *ngFor="let chatroom of chatroomService.chatrooms | async">
-    <div class="-sv-chatapp__chat_chatroom-list-item">
-      <a [routerLink]="['/chat', chatroom.id]" class="-sv-chatapp__chat_chatroom_item">{{ chatroom.name }}</a>
+    <div class="-sv-chatapp__chat_chatroom-list-item" [routerLink]="['/chat', chatroom.id]">
+      <a class="-sv-chatapp__chat_chatroom-item" [routerLink]="['/chat', chatroom.id]">{{ chatroom.name }}</a>
     </div>
   </ng-container>
 </div>

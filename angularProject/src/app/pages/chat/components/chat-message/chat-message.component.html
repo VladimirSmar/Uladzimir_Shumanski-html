@@ -1,14 +1,14 @@
 <ng-container *ngIf="currentUser.id == message.sender.id else othersMessage">
-  <div class="chat-message chat-my-message d-flex">
-    <div class="image-wrapper" [routerLink]="'/profile/' + message.sender.id">
-      <img [src]="message.sender.photoUrl" class="rounded-circle">
+  <div class="-sv-chatapp__chat_chatroom-message -sv-chatapp__chat_chatroom-my-message">
+    <div class="-sv-chatapp__chat_chatroom-message-image-wrapper" [routerLink]="'/profile/' + message.sender.id">
+      <img class="-sv-chatapp__chat_chatroom-message-image" [src]="message.sender.photoUrl">
     </div>
-    <div class="bubble d-flex flex-column">
-      <div class="d-flex align-items-baseline" [routerLink]="'/profile/' + message.sender.id">
-        <span class="name">{{message.sender.firstName}} {{message.sender.lastName}}</span><span
-          class="timestamp">{{message.createdAt.toDate() | date: 'medium'}}</span>
+    <div class="-sv-chatapp__chat_chatroom-message-text-wrapper">
+      <div class="-sv-chatapp__chat_chatroom-message-sender-name-wrapper" [routerLink]="'/profile/' + message.sender.id">
+        <span class="-sv-chatapp__chat_chatroom-message-sender-name">{{message.sender.firstName}} {{message.sender.lastName}}</span><span
+          class="-sv-chatapp__chat_chatroom-message-timestamp">{{message.createdAt.toDate() | date: 'medium'}}</span>
       </div>
-      <div class="message">
+      <div class="-sv-chatapp__chat_chatroom-message-text">
         {{message.message}}
       </div>
     </div>
@@ -16,16 +16,16 @@
 </ng-container>
 
 <ng-template #othersMessage>
-  <div class="chat-message chat-others-message d-flex">
-    <div class="image-wrapper" [routerLink]="'/profile/' + message.sender.id">
-      <img [src]="message.sender.photoUrl" class="rounded-circle">
+  <div class="-sv-chatapp__chat_chatroom-message -sv-chatapp__chat_chatroom-others-message">
+    <div class="-sv-chatapp__chat_chatroom-message-image-wrapper" [routerLink]="'/profile/' + message.sender.id">
+      <img class="-sv-chatapp__chat_chatroom-message-image" [src]="message.sender.photoUrl">
     </div>
-    <div class="bubble d-flex flex-column">
-      <div class="d-flex align-items-baseline" [routerLink]="'/profile/' + message.sender.id">
-        <span class="name">{{message.sender.firstName}} {{message.sender.lastName}}</span><span
-          class="timestamp">{{message.createdAt.toDate() | date: 'medium'}}</span>
+    <div class="-sv-chatapp__chat_chatroom-message-text-wrapper">
+      <div class="-sv-chatapp__chat_chatroom-message-sender-name-wrapper" [routerLink]="'/profile/' + message.sender.id">
+        <span class="-sv-chatapp__chat_chatroom-message-sender-name name">{{message.sender.firstName}} {{message.sender.lastName}}</span><span
+          class="-sv-chatapp__chat_chatroom-message-timestamp timestamp">{{message.createdAt.toDate() | date: 'medium'}}</span>
       </div>
-      <div class="message">
+      <div class="-sv-chatapp__chat_chatroom-message-text message">
         {{message.message}}
       </div>
     </div>

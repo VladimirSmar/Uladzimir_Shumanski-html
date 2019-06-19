@@ -8,7 +8,7 @@ import { ChatroomService } from './../../../../services/chatroom.service';
 })
 export class ChatroomListComponent implements OnInit {
 
-  private chatroomTitle: string;
+  private _chatroomTitle: string = undefined;
 
   constructor(
     public chatroomService: ChatroomService,
@@ -18,8 +18,8 @@ export class ChatroomListComponent implements OnInit {
   }
 
   addChatroom(): void {
-    this.chatroomTitle = prompt("Enter chatroom title: ", "New Chatroom");
-      this.chatroomService.addChatroom(this.chatroomTitle);
+    this._chatroomTitle = prompt("Enter chatroom title: ", "New Chatroom");
+      this.chatroomService.addChatroom(this._chatroomTitle);
   }
 
 }

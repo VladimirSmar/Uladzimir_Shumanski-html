@@ -6,7 +6,7 @@
     height: 100%;
 }
 
-.-sv-chatapp__chat_initial-message-container {
+.-sv-chatapp__chat_chatroom-initial-message-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,12 +14,12 @@
     width: 100%;
 }
 
-.-sv-chatapp__chat_message-wrapper {
+.-sv-chatapp__chat_chatroom-message-wrapper {
     height: 100%;
     overflow-y: auto;
 }
 
-.-sv-chatapp__chat_initial-message {
+.-sv-chatapp__chat_chatroom-initial-message {
     width: 30%;
     height: 7%;
     margin-bottom: 10%;
