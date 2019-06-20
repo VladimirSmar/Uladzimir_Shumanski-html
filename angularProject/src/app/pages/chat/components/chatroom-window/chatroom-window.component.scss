@@ -20,13 +20,14 @@
 }
 
 .-sv-chatapp__chat_chatroom-initial-message {
-    width: 30%;
-    height: 7%;
+    width: 40%;
+    height: 15%;
     margin-bottom: 10%;
     border: 1px solid $light-grey;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 1.2em;
     box-shadow: 0 5px 10px $light-grey;
 }

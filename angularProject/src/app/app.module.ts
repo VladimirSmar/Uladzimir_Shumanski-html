@@ -10,6 +10,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { StoreModule } from '@ngrx/store';
+
+import { recorderReducer } from './store/reducers/recorder.reducer';
 
 import { AuthGuard } from './guards/auth.guard';
 import { IsOwnerGuard } from './guards/is-owner.guard';
@@ -31,6 +34,7 @@ import { ChatMessageComponent } from './pages/chat/components/chat-message/chat-
 import { ChatroomWindowComponent } from './pages/chat/components/chatroom-window/chatroom-window.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
+import { RecorderComponent } from './pages/recorder/recorder.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,8 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     ChatMessageComponent,
     ChatroomWindowComponent,
     ProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    RecorderComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,10 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    StoreModule.forRoot({
+      record: recorderReducer
+    })
   ],
   providers: [
     AlertService,

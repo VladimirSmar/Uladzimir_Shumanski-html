@@ -34,7 +34,7 @@ export class AuthService {
       })
     );
 
-    this.setCurrentUserSnapshot();
+    this._setCurrentUserSnapshot();
   }
 
   public signup(firstName: string, lastName: string, email: string, password: string): Observable<boolean> {
@@ -73,7 +73,7 @@ export class AuthService {
     })
   }
 
-  private setCurrentUserSnapshot(): void {
+  private _setCurrentUserSnapshot(): void {
     this.currentUser.subscribe(user => this.currentUserSnapshot = user);
   }
 }

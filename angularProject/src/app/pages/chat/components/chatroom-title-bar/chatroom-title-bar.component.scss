@@ -6,16 +6,23 @@
 }
 
 .-sv-chatapp__chat_chatroom-title {
-    display: block;
-    font-size: 1.5em;
     margin: 0.3em 0;
+    font-size: 1.5em;
     font-weight: 500;
     line-height: 1.2;
-    color: $secondary;
 }
 
 @media (max-width: 576px) {
     .-sv-chatapp__chat_chatroom-title-container {
         padding: 0.5em 1em 0.5em 1em;
+    }
+}
+
+@media (max-width: 640px) {
+    .-sv-chatapp__chat_chatroom-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
     }
 }

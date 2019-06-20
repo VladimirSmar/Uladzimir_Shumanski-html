@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit, OnDestroy {
     private _loadingService: LoadingService,
     private _router: Router
   ) {
-    this.createForm();
+    this._createForm();
   }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit, OnDestroy {
     this._subscriptions.forEach(sub => sub.unsubscribe);
   }
 
-  private createForm(): void {
+  private _createForm(): void {
     this.signupForm = this._formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],

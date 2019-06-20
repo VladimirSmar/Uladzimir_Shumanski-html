@@ -23,7 +23,7 @@
           <input class="-sv-chatapp__signup_form-control" type="password" id="password-input" placeholder="Password"
             formControlName="password" autocomplete="current-password" />
         </div>
-        <button class="-sv-chatapp__signup_submit-button" type="submit">Submit</button>
+        <button class="-sv-chatapp__signup_submit-button" type="submit" [disabled]="!signupForm.valid">Submit</button>
       </form>
       <small><a class="-sv-chatapp__signup_router-link" routerLink="/login">Already have an Account?</a></small>
     </div>

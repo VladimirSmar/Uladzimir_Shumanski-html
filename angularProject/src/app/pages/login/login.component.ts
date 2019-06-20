@@ -8,7 +8,6 @@ import { AlertType } from './../../emuns/alert-type.enum';
 import { LoadingService } from './../../services/loading.service';
 import { AuthService } from './../../services/auth.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,9 +25,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     private _loadingService: LoadingService,
     private _auth: AuthService,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
   ) {
-    this.createForm();
+    this._createForm();
   }
 
   ngOnInit() {
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this._subscriptions.forEach(sub => sub.unsubscribe);
   }
 
-  private createForm(): void {
+  private _createForm(): void {
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
@@ -65,7 +64,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           if (success) {
             this._router.navigateByUrl(this._returnUrl);
           } else {
-            this.displayFailedLogin();
+            this._displayFailedLogin();
           }
 
           this._loadingService.isLoading.next(false);
@@ -73,11 +72,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       )
     } else {
       this._loadingService.isLoading.next(false);
-      this.displayFailedLogin();
+      this._displayFailedLogin();
     }
   }
 
-  private displayFailedLogin(): void {
+  private _displayFailedLogin(): void {
     const failedLoginAlert = new Alert('Your Email or Password were invalid, try again.', AlertType.Danger);
     this._alertService.alerts.next(failedLoginAlert);
   }

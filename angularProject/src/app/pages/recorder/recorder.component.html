@@ -1,0 +1,29 @@
+<div class="-sv-chatapp__recorder-container">
+  <app-navbar class="-sv-chatapp__navbar-container"></app-navbar>
+
+  <textarea class="-sv-chatapp__recorder_add-record-message" rows="5" placeholder="Express your feelings =)."
+    [(ngModel)]="newRecordText" #addRecordMessage></textarea>
+  <div class="-sv-chatapp__recorder_submit-button-wrapper">
+    <button class="-sv-chatapp__recorder_submit-button" (click)="addRecord(addRecordMessage.value)">Add
+      Record</button>
+  </div>
+
+  <div class="-sv-chatapp__recorder_title">Records</div>
+
+  <div class="-sv-chatapp__recorder">
+    <ng-container *ngIf="records else noRecords">
+      <div class="-sv-chatapp__recorder_records-list">
+        <div class="-sv-chatapp__recorder_records-list-item" *ngFor="let record of records | async">
+          <div class="-sv-chatapp__recorder_record-date">{{record.createdAt}}</div>
+          <div class="-sv-chatapp_-recorder_record-message">{{record.message}}</div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #noRecords>
+  <div class="-sv-chatapp__recorder_initial-message-container">
+    <div class="-sv-chatapp__recorder_initial-message">There are no records yet</div>
+  </div>
+</ng-template>

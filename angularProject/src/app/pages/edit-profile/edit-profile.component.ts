@@ -83,7 +83,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   }
 
   public save(): void {
-    let photo;
+    let photo: string;
 
     if (this.downloadUrl) {
       photo = this.downloadUrl;

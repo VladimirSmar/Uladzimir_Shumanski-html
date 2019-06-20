@@ -11,14 +11,14 @@ export class ChatInputComponent implements OnInit {
   public newMessageText: string = '';
 
   constructor(
-    private chatroomService: ChatroomService
+    private _chatroomService: ChatroomService
   ) { }
 
   ngOnInit() {
   }
 
   public submit(message: string): void{
-    this.chatroomService.createMessage(message);
+    this._chatroomService.createMessage(message);
 
     //reset input
     this.newMessageText = '';

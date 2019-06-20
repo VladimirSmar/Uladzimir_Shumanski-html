@@ -133,6 +133,11 @@
         border-color: #328CC1;
         box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
     }
+
+    &:disabled {
+        background-color: rgb(88, 125, 146);
+        border-color:rgb(88, 125, 146);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

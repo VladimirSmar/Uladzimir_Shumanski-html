@@ -1,0 +1,104 @@
+@import './../../../styles/variables';
+
+.-sv-chatapp__recorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: calc(100%-400px);
+}
+
+.-sv-chatapp__recorder_add-record-message {
+    width: calc(100% - 2em);
+    margin: 1em;
+}
+
+.-sv-chatapp__recorder_submit-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.-sv-chatapp__recorder_submit-button {
+    display: inline-block;
+    width: 50%;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #328CC1;
+    border: 1px solid #328CC1;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: rgb(41, 122, 168);
+        border-color: rgb(41, 122, 168);
+    }
+
+    &:focus {
+        outline: 0;
+        color: #fff;
+        background-color: #328CC1;
+        border-color: #328CC1;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
+}
+
+.-sv-chatapp__recorder_title {
+    font-size: 2rem;
+    margin: 1em 0;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $secondary;
+    text-align: center;
+}
+
+.-sv-chatapp__recorder_records-list {
+    margin-left: 1em;
+}
+
+.-sv-chatapp__recorder_records-list-item {
+    margin: 0.3em 0.5em 1em 0;
+}
+
+.-sv-chatapp__recorder_record-date {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.-sv-chatapp_-recorder_record-message {
+    margin-left: 2em;
+}
+
+.-sv-chatapp__recorder_initial-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.-sv-chatapp__recorder_initial-message {
+    width: 40%;
+    height: 15%;
+    margin-bottom: 10%;
+    border: 1px solid $light-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+    box-shadow: 0 5px 10px $light-grey;
+}

@@ -21,7 +21,7 @@ export class ChatroomService {
   constructor(
     private _database: AngularFirestore,
     private _auth: AuthService,
-    private _alertService: AlertService
+    private _alertService: AlertService,
   ) {
     this.selectedChatroom = this.changeChatroom.pipe(
       switchMap(chatroomId => {
@@ -56,7 +56,6 @@ export class ChatroomService {
         createdAt: new Date(),
         sender: this._auth.currentUserSnapshot
       };
-
       this._database.collection(`chatrooms/${chatroomId}/messages`).add(message);
     } else {
       const invalidMessageAlert = new Alert('Your message were invalid, try again.', AlertType.Danger);

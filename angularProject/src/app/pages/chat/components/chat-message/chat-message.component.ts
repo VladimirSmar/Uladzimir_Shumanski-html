@@ -14,11 +14,11 @@ export class ChatMessageComponent implements OnInit {
   public currentUser: User = undefined;
 
   constructor(
-    private auth: AuthService
+    private _auth: AuthService
   ) { }
 
   ngOnInit() {
-    this.currentUser = this.auth.currentUserSnapshot;
+    this.currentUser = this._auth.currentUserSnapshot;
   }
 
 }
