@@ -24,7 +24,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   private _subsubscriptions: Subscription[] = [];
   public uploadPercent: number = 0;
   public downloadUrl: string | null = null;
-  private _downloadURL: Observable<string> = undefined;
+  private _downloadURL: Observable<string> = null;
 
   constructor(
     private _auth: AuthService,

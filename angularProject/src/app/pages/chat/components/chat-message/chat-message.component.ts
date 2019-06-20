@@ -10,8 +10,8 @@ import { User } from './../../../../interfaces/user';
 })
 export class ChatMessageComponent implements OnInit {
 
-  @Input() message: Message = undefined;
-  public currentUser: User = undefined;
+  @Input() message: Message = null;
+  public currentUser: User = null;
 
   constructor(
     private _auth: AuthService

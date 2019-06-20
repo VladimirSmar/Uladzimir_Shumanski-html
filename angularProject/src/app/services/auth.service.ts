@@ -14,8 +14,8 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 })
 export class AuthService {
 
-  public currentUser: Observable<User | null> = undefined;
-  public currentUserSnapshot: User | null = undefined;
+  public currentUser: Observable<User | null> = null;
+  public currentUserSnapshot: User | null = null;
 
   constructor(
     private _router: Router,

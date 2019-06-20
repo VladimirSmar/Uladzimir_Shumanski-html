@@ -12,7 +12,7 @@ import { LoggingService } from './../../services/logging.service';
 })
 export class RecorderComponent implements OnInit {
 
-  public records: Observable<Record[]> = undefined;
+  public records: Observable<Record[]> = null;
 
   public newRecordText: string = '';
 

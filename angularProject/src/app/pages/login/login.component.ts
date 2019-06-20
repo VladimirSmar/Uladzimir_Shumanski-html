@@ -15,9 +15,9 @@ import { AuthService } from './../../services/auth.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  public loginForm: FormGroup = undefined;
+  public loginForm: FormGroup = null;
   private _subscriptions: Subscription[] = [];
-  private _returnUrl: string = undefined;
+  private _returnUrl: string = null;
 
   constructor(
     private _formBuilder: FormBuilder,

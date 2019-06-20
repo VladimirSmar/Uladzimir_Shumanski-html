@@ -8,7 +8,7 @@ import { ChatroomService } from './../../../../services/chatroom.service';
 })
 export class ChatroomListComponent implements OnInit {
 
-  private _chatroomTitle: string = undefined;
+  private _chatroomTitle: string = null;
 
   constructor(
     public chatroomService: ChatroomService,

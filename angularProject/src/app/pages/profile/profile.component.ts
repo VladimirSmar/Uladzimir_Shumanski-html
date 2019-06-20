@@ -14,7 +14,7 @@ import { User } from './../../interfaces/user';
 export class ProfileComponent implements OnInit, OnDestroy {
 
   public currentUser: any = null;
-  public user: User = undefined;
+  public user: User = null;
   private _subscriptions: Subscription[] = [];
 
   constructor(

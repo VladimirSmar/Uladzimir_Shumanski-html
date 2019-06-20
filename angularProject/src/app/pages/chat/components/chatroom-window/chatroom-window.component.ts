@@ -11,11 +11,11 @@ import { LoadingService } from './../../../../services/loading.service';
 })
 export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChecked {
 
-  @ViewChild('scrollContainer') private scrollContainer: ElementRef = undefined;
+  @ViewChild('scrollContainer') private scrollContainer: ElementRef = null;
 
   private _subscriptions: Subscription[] = [];
-  public chatroom: Observable<any> = undefined;
-  public messages: Observable<any> = undefined;
+  public chatroom: Observable<any> = null;
+  public messages: Observable<any> = null;
 
   constructor(
     private _route: ActivatedRoute,

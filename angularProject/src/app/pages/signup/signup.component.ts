@@ -15,7 +15,7 @@ import { LoadingService } from './../../services/loading.service';
 })
 export class SignupComponent implements OnInit, OnDestroy {
 
-  public signupForm: FormGroup = undefined;
+  public signupForm: FormGroup = null;
   private _subscriptions: Subscription[] = [];
 
   constructor(

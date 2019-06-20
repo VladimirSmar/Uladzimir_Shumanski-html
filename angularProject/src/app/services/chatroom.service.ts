@@ -13,10 +13,10 @@ import { AlertService } from './alert.service';
 })
 export class ChatroomService {
 
-  public chatrooms: Observable<any> = undefined;
+  public chatrooms: Observable<any> = null;
   public changeChatroom: BehaviorSubject<string | null> = new BehaviorSubject(null);
-  public selectedChatroom: Observable<any> = undefined;
-  public selectedChatroomMessages: Observable<any> = undefined;
+  public selectedChatroom: Observable<any> = null;
+  public selectedChatroomMessages: Observable<any> = null;
 
   constructor(
     private _database: AngularFirestore,
