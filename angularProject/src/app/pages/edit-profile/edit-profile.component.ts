@@ -24,7 +24,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   private _subsubscriptions: Subscription[] = [];
   public uploadPercent: number = 0;
   public downloadUrl: string | null = null;
-  private _downloadURL: Observable<string> = null;
+  private _downloadURLObservable: Observable<string> = null;
 
   constructor(
     private _auth: AuthService,
@@ -40,7 +40,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this._subsubscriptions.push(
-      this._auth.currentUser.subscribe(user => {
+      this._auth.currentUserObservable.subscribe(user => {
         this.currentUser = user;
         this._loadingService.isLoading.next(false);
       })
@@ -59,7 +59,6 @@ export class EditProfileComponent implements OnInit, OnDestroy {
     const task = this._fireStorage.upload(filePath, file);
     const ref = this._fireStorage.ref(filePath);
 
-    //observe the percentage changes
     this._subsubscriptions.push(
       task.percentageChanges().subscribe(percentage => {
         if(percentage < 100) {
@@ -71,18 +70,17 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       })
     );
 
-    //get notified when the download URL is available
     this._subsubscriptions.push(
       task.snapshotChanges().pipe(
         finalize(() => {
-          this._downloadURL = ref.getDownloadURL()
-          this._downloadURL.subscribe(url => this.downloadUrl = url)
+          this._downloadURLObservable = ref.getDownloadURL()
+          this._downloadURLObservable.subscribe(url => this.downloadUrl = url)
         })
       ).subscribe()
     );
   }
 
-  public save(): void {
+  public saveProfileChanges(): void {
     let photo: string;
 
     if (this.downloadUrl) {

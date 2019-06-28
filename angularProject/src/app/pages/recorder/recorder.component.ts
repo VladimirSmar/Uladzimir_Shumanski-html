@@ -12,7 +12,7 @@ import { LoggingService } from './../../services/logging.service';
 })
 export class RecorderComponent implements OnInit {
 
-  public records: Observable<Record[]> = null;
+  public recordsObservable: Observable<Record[]> = null;
 
   public newRecordText: string = '';
 
@@ -20,7 +20,7 @@ export class RecorderComponent implements OnInit {
     private _store: Store<AppState>,
     private _loggingService: LoggingService
   ) {
-    this.records = this._store.select('record');
+    this.recordsObservable = this._store.select('record');
   }
 
   ngOnInit() {

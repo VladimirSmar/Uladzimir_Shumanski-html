@@ -1,5 +1,5 @@
 <div class="-sv-chatapp__chat_chatroom-window">
-  <ng-container *ngIf="!chatroom else chatMessages">
+  <ng-container *ngIf="!chatroomObservable else chatMessages">
     <div class="-sv-chatapp__chat_chatroom-initial-message-container">
       <div class="-sv-chatapp__chat_chatroom-initial-message">
         Select a Room
@@ -9,10 +9,10 @@
 </div>
 
 <ng-template #chatMessages>
-  <app-chatroom-title-bar class="-sv-chatapp__chat_chatroom-title-container" [title]="chatroom.name"></app-chatroom-title-bar>
+  <app-chatroom-title-bar class="-sv-chatapp__chat_chatroom-title-container" [title]="chatroomObservable.name"></app-chatroom-title-bar>
   <div class="-sv-chatapp__chat_chatroom-message-wrapper" #scrollContainer>
-    <ng-container *ngIf="messages?.length > 0 else noMessages">
-      <ng-container *ngFor="let message of messages">
+    <ng-container *ngIf="messagesObservable?.length > 0 else noMessages">
+      <ng-container *ngFor="let message of messagesObservable">
         <app-chat-message class="-sv-chatapp__chat_chatroom-message-container" [message]="message"></app-chat-message>
       </ng-container>
     </ng-container>

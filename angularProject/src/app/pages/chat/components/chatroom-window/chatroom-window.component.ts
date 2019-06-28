@@ -14,8 +14,8 @@ export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChec
   @ViewChild('scrollContainer') private scrollContainer: ElementRef = null;
 
   private _subscriptions: Subscription[] = [];
-  public chatroom: Observable<any> = null;
-  public messages: Observable<any> = null;
+  public chatroomObservable: Observable<any> = null;
+  public messagesObservable: Observable<any> = null;
 
   constructor(
     private _route: ActivatedRoute,
@@ -25,14 +25,14 @@ export class ChatroomWindowComponent implements OnInit, OnDestroy, AfterViewChec
     this._loadingService.isLoading.next(true);
 
     this._subscriptions.push(
-      this._chatroomService.selectedChatroom.subscribe(chatroom => {
-        this.chatroom = chatroom;
+      this._chatroomService.selectedChatroomObservable.subscribe(chatroom => {
+        this.chatroomObservable = chatroom;
       })
     )
     
     this._subscriptions.push(
-      this._chatroomService.selectedChatroomMessages.subscribe(messages => {
-        this.messages = messages;
+      this._chatroomService.selectedChatroomMessagesObservable.subscribe(messages => {
+        this.messagesObservable = messages;
       })
     )
   }

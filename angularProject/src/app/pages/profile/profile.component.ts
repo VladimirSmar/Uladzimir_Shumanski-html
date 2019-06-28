@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this._subscriptions.push(
-      this._auth.currentUser.subscribe( user => {
+      this._auth.currentUserObservable.subscribe( user => {
         this.currentUser = user;
         this._loadingService.isLoading.next(false);
       })

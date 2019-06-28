@@ -20,7 +20,6 @@ export class ChatInputComponent implements OnInit {
   public submit(message: string): void{
     this._chatroomService.createMessage(message);
 
-    //reset input
     this.newMessageText = '';
   }
 

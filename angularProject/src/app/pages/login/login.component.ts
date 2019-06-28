@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this._returnUrl = this._route.snapshot.queryParams['returnUrl'] || '/chat';
 
     this._subscriptions.push(
-      this._auth.currentUser.subscribe(user => {
+      this._auth.currentUserObservable.subscribe(user => {
         if (!!user) {
           this._router.navigateByUrl('/chat');
         }

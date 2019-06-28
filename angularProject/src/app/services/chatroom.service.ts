@@ -13,17 +13,17 @@ import { AlertService } from './alert.service';
 })
 export class ChatroomService {
 
-  public chatrooms: Observable<any> = null;
+  public chatroomsObservable: Observable<any> = null;
   public changeChatroom: BehaviorSubject<string | null> = new BehaviorSubject(null);
-  public selectedChatroom: Observable<any> = null;
-  public selectedChatroomMessages: Observable<any> = null;
+  public selectedChatroomObservable: Observable<any> = null;
+  public selectedChatroomMessagesObservable: Observable<any> = null;
 
   constructor(
     private _database: AngularFirestore,
     private _auth: AuthService,
     private _alertService: AlertService,
   ) {
-    this.selectedChatroom = this.changeChatroom.pipe(
+    this.selectedChatroomObservable = this.changeChatroom.pipe(
       switchMap(chatroomId => {
         if (chatroomId) {
           return _database.doc(`chatrooms/${chatroomId}`).valueChanges();
@@ -32,7 +32,7 @@ export class ChatroomService {
       })
     );
 
-    this.selectedChatroomMessages = this.changeChatroom.pipe(
+    this.selectedChatroomMessagesObservable = this.changeChatroom.pipe(
       switchMap(chatroomId => {
         if (chatroomId) {
           return _database.collection(`chatrooms/${chatroomId}/messages`, ref => {
@@ -45,7 +45,7 @@ export class ChatroomService {
       })
     );
 
-    this.chatrooms = _database.collection('chatrooms').valueChanges();
+    this.chatroomsObservable = _database.collection('chatrooms').valueChanges();
   }
 
   public createMessage(text: string): void {

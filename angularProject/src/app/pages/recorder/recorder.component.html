@@ -11,9 +11,9 @@
   <div class="-sv-chatapp__recorder_title">Records</div>
 
   <div class="-sv-chatapp__recorder">
-    <ng-container *ngIf="records else noRecords">
+    <ng-container *ngIf="recordsObservable else noRecords">
       <div class="-sv-chatapp__recorder_records-list">
-        <div class="-sv-chatapp__recorder_records-list-item" *ngFor="let record of records | async">
+        <div class="-sv-chatapp__recorder_records-list-item" *ngFor="let record of recordsObservable | async">
           <div class="-sv-chatapp__recorder_record-date">{{record.createdAt}}</div>
           <div class="-sv-chatapp_-recorder_record-message">{{record.message}}</div>
         </div>

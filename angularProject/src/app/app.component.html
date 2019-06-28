@@ -1,6 +1,6 @@
 <div class="-sv-chatapp">
-    <div class="-sv-chatapp_container">
-        <ngx-loading class="-sv-chatapp__loading-indicator" [show]="loading" [config]=""></ngx-loading>
+    <div class="-sv-chatapp__container">
+        <ngx-loading class="-sv-chatapp__loading-indicator" [show]="isLoading" [config]=""></ngx-loading>
         <div class="-sv-chatapp__alert-wrapper">
             <alert class="-sv-chatapp__alert" *ngFor="let alert of alerts" [type]="alert.type" dismissOnTimeout="5000">
                 {{ alert.text }}

@@ -14,7 +14,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 })
 export class AuthService {
 
-  public currentUser: Observable<User | null> = null;
+  public currentUserObservable: Observable<User | null> = null;
   public currentUserSnapshot: User | null = null;
 
   constructor(
@@ -24,7 +24,7 @@ export class AuthService {
     private _database: AngularFirestore
   ) {
 
-    this.currentUser = this._angularFirebaseAuth.authState.pipe(
+    this.currentUserObservable = this._angularFirebaseAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
           return this._database.doc<User>(`users/${user.uid}`).valueChanges();
@@ -34,7 +34,7 @@ export class AuthService {
       })
     );
 
-    this._setCurrentUserSnapshot();
+    this._subscribeToCurrentUserSnapshot();
   }
 
   public signup(firstName: string, lastName: string, email: string, password: string): Observable<boolean> {
@@ -73,7 +73,7 @@ export class AuthService {
     })
   }
 
-  private _setCurrentUserSnapshot(): void {
-    this.currentUser.subscribe(user => this.currentUserSnapshot = user);
+  private _subscribeToCurrentUserSnapshot(): void {
+    this.currentUserObservable.subscribe(user => this.currentUserSnapshot = user);
   }
 }

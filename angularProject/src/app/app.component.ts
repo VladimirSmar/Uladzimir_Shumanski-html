@@ -12,7 +12,7 @@ import { LoadingService } from './services/loading.service';
 export class AppComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription[] = [];
   public alerts: Array<Alert> = []
-  public loading: boolean = false;
+  public isLoading: boolean = false;
 
   constructor(
     private _alertService: AlertService,
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this._subscriptions.push(
       this._loadingService.isLoading.subscribe(isLoading => {
-        this.loading = isLoading;
+        this.isLoading = isLoading;
       })
     )
   }
